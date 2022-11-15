@@ -1,0 +1,11 @@
+# Ignore minified files
+**/*.min.js
+
+# Ignore 3rd party files
+node_modules
+src/js/lib
+
+#TODO: Fix these badly formatted files:
+src/js/components/sidebar-detached.js
+src/js/components/tool-tip-global.js
+src/js/taco-elements/bulli-taco-horizontal-comp-chart.js
