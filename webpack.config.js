@@ -150,7 +150,7 @@ const svgModule = {
 };
 
 module.exports = [
-  //jsBuildModule,
+  jsBuildModule,
   mediaAssetsBuildModule,
-  // svgModule
+  svgModule
 ]
