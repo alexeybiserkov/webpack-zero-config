@@ -1,0 +1,47 @@
+@import '../abstracts/mixins';
+
+.site-header {
+    .top-row {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        @include media-breakpoint-down(lg) {
+            .container {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .site-header-wrapper {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: nowrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .logo-wrapper {
+        a {
+            display: block;
+            line-height: 1;
+        }
+
+        img,
+        .site-logo {
+            @include media-breakpoint-down(lg) {
+                width: 282px;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 200px;
+            }
+        }
+    }
+
+    &.logo-only {
+        text-align: center;
+    }
+}

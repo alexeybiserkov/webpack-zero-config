@@ -1,0 +1,28 @@
+@import '../abstracts/mixins';
+
+//stylelint-disable selector-class-pattern
+body.post-template-default,
+body.post-template-template-review {
+    .vc_row {
+        h1 {
+            font-size: 1.75rem;
+        }
+        h2,
+        h2.taco-section-title.primary {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1.35rem;
+        }
+        h4 {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+
+.post-content-row .wpb_wrapper {
+    @include media-breakpoint-down(md) {
+        overflow-x: auto;
+    }
+}

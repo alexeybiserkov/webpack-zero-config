@@ -1,0 +1,275 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+@import '../components/advertisement-disclosure';
+@import '../shortcodes/taco-article-thumbs';
+
+//stylelint-disable
+.hero-header {
+    position: relative;
+    background: #f7f8fc;
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-image {
+        position: absolute;
+        bottom: 0;
+        z-index: 0;
+
+        &.hero-image-left {
+            left: -35px;
+
+            @media (max-width: 1280px) {
+                display: none;
+            }
+
+            @media (max-width: 1400px) {
+                left: -70px;
+                width: 150px;
+            }
+        }
+
+        &.hero-image-right {
+            top: -20px;
+            right: 0px;
+            margin: auto;
+
+            @media (min-width: 1400px) {
+                right: -10%;
+            }
+
+            @include media-breakpoint-down(xl) {
+                width: 380px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+
+    .hero-description {
+        max-width: 600px;
+
+        @include media-breakpoint-between(md, lg) {
+            width: 50%;
+        }
+    }
+
+    .post-meta-info .comment-count {
+        margin-left: 20px;
+    }
+}
+
+.hero-content {
+    margin: 0 auto;
+    padding: 50px 0 30px 0;
+
+    .adv-disclosure-block {
+        padding-top: $spacer-sm;
+    }
+}
+
+.content-area {
+    background: #ffffff;
+}
+
+.post-info {
+    font-size: $font-size-small;
+    color: $cat-color-secondary-content;
+}
+
+.breadcrumbs {
+    margin-top: 0;
+}
+
+.category-breadcrumbs {
+    .breadcrumbs {
+        margin-top: 0;
+    }
+
+    svg.fa-home {
+        font-size: 16px;
+        color: $cat-color-brand-elements;
+    }
+
+    svg.fa-chevron-right {
+        font-size: 10px;
+        margin-left: 11px;
+        margin-right: 9px;
+    }
+}
+
+.category-content .taco-content-section {
+    margin: 0;
+    padding: 0;
+
+    header {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #c6cbd4;
+    }
+}
+
+.taco-section-menu {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    span {
+        color: #0f1e26;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $cat-color-brand-elements;
+        height: 3px;
+        width: 30px;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: .8rem;
+
+        a {
+            color: $cat-color-secondary-content;
+
+            &:hover {
+                color: $cat-color-brand-elements;
+                text-decoration: none;
+            }
+
+            &.active {
+                color: $cat-color-brand-elements;
+            }
+        }
+    }
+
+    a.btn-primary {
+        color: #ffffff;
+        text-transform: uppercase;
+
+        &:hover {
+            background: #5154ff;
+        }
+
+        svg {
+            width: 0.600em;
+            margin-left: 5px;
+            color: #ffffff;
+        }
+    }
+}
+
+/**
+* Promoted journeys
+*/
+#promoted-journeys {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 50px;
+        margin-top: -50px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        margin: 20px 20px 45px 20px;
+    }
+
+    .container {
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center bottom;
+        box-shadow: 0 0 15px 3px #ececec70;
+
+        @include media-breakpoint-up(md) {
+            padding: 3.4rem 3.1rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 2rem;
+            background-image: none !important;
+        }
+    }
+
+    h1 {
+        @include media-breakpoint-up(md) {
+            margin: 20px 0;
+            font-size: $h2-font-size;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 10px 0 15px 0;
+            font-size: $font-size-larger;
+        }
+    }
+
+    h2 {
+        margin: 0;
+        color: #8c63ef;
+        text-transform: uppercase;
+        font-size: $font-size-small;
+    }
+
+    .cta-container {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        > a {
+            text-transform: uppercase;
+
+            @include media-breakpoint-up(md) {
+                min-width: 250px;
+            }
+
+            @include media-breakpoint-down(sm) {
+                display: block;
+            }
+        }
+    }
+
+    .separator {
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            width: 2px;
+            margin: 0 30px;
+            background: #e6e6e6;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.container.category-main-container {
+    max-width: 1020px;
+    background: #ffffff;
+}
+
+.hero-bar {
+    height: 40px;
+    background: #ffffff;
+    margin: 0 auto;
+}

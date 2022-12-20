@@ -1,13 +1,13 @@
-# gulp-zero-config
+# webpack-zero-config
 ##
 ```sh
 npm install
 ```
-make sure you have installed gulp global
+for production run command
 ```sh
-npm install -g gulp
+npm run build
 ```
-and run build command
+and for local run dev command
 ```sh
- gulp build
+ npm run dev 
 ```

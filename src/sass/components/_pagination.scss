@@ -1,0 +1,25 @@
+.pagination-links {
+    text-align: center;
+    margin: $spacer-md 0;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    .page-numbers {
+        display: block;
+        margin: 0 $spacer-xs;
+    }
+
+    .next,
+    .prev {
+        margin: 0 $spacer-sm;
+    }
+}
+

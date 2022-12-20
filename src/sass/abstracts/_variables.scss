@@ -1,0 +1,538 @@
+/*
+ * Color System
+ */
+$white: #fff;
+$black: #000;
+
+
+$navy-light: #3a3384;
+$navy: #28235b;
+$navy-dark: #1a173b;
+$navy-darkest: #06060f;
+
+$blue-lightest: #e8efff;
+$blue-light: #1e63ff;
+$blue: #1e22ff;
+$blue-dark: #123a99;
+
+$purple-lightest: #f1ecfd;
+$purple-light: #f4f7ff;
+$purple: #7a4aec;
+$purple-dark: #6245a7;
+$purple-darker: #29235b;
+$purple-dark-2: #8c63ef;
+
+$purple-gray-light : #8a87ac;
+$purple-gray-dark: #534f7b;
+$purple-gray-darker: #3e396b;
+
+$green-lightest: #f3fbfa;
+$green: #38d39f;
+$green-dark: #27936f;
+
+$orange-lightest: #fefaf3;
+$orange: #ff6348;
+$orange-dark: #cc4f39;
+
+$gold-lightest: #fffcf2;
+$gold-dark: #ffc206;
+$gold: #ffc108;
+
+$pink-lightest: #f2ecf1;
+$pink: #ed71d8;
+
+$bluestone-lightest: #f4f4f7;
+$bluestone: #9bb0c6;
+
+$gray-lightest: #f7f8fc;
+$gray-lighter: #c2c0d6;
+$gray-light: #979797;
+$gray: #555;
+$gray-dark: #0f1e26;
+
+$deep-purple: #26526c;
+$deep-blue: #345980;
+
+$indigo-lightest: #e6edff;
+$indigo-light: #729dff;
+$indigo: #474bff;
+$indigo-darkest: #1d1651;
+
+$light-blue: #42cafd;
+
+$mint-green: #009688;
+
+$primary-lightest: $blue-lightest;
+$primary: $blue;
+$secondary-lightest: $purple-lightest;
+$secondary-light: $purple-light;
+$secondary: $purple;
+$secondary-darker: $purple-darker;
+$top-choice: $green;
+$success-lightest: $green-lightest;
+$success: $green;
+$info-lightest: $indigo-lightest;
+$info: $indigo;
+$warning-lightest: $gold-lightest;
+$warning: $gold;
+$danger-lightest: $orange-lightest;
+$danger: $orange;
+
+$theme-status-colors: (
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+);
+
+$theme-colors: map-merge( (
+    'primary': $primary,
+    'secondary': $secondary,
+), $theme-status-colors );
+
+/*
+ * Page background
+ */
+$background-body: $white;
+$post-background: $gray-lightest;
+$content-max-width: 730px;
+
+/*
+ * Typography
+ */
+$font-family-fallback: Arial, sans-serif;
+$font-family-base: 'Lato', Arial, sans-serif;
+$headings-font-family: $font-family-base;
+
+$font-size-base: 1.125rem;
+$font-size-medium: 1rem;
+$font-size-smaller: .75rem;
+$font-size-small: 0.875rem;
+$font-size-large: 1.125rem;
+$font-size-larger: 1.5rem;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1.125rem;
+
+$blockquote-font-size: 1.3rem;
+
+$headings-margin-bottom: .5rem;
+$paragraph-margin-bottom: 1rem;
+
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$font-weight-base: $font-weight-normal;
+$headings-font-weight: $font-weight-bold;
+
+$line-height-base: 1.7;
+$headings-line-height: $line-height-base * .8;
+
+$letter-spacing-fallback: -.2px;
+$letter-spacing-base: normal;
+$letter-spacing-headings: .4px;
+
+$color-base: $gray;
+$color-contrast: $white;
+$headings-color: $gray-dark;
+
+$link-color: $indigo;
+$link-custom-color: $purple-darker;
+$link-decoration: none;
+$link-hover-color: $link-color;
+$link-hover-decoration: underline;
+
+/*
+ * Presets
+ */
+$border-color-base: $gray-lighter;
+$border-color-light: #ddd;
+$border-color-lighter: #e8e8e8;
+
+
+/*
+ * Spacing
+ */
+$spacer-base: 1rem;
+$spacer-xs: $spacer-base * .375;
+$spacer-sm: $spacer-base * .75;
+$spacer-md: $spacer-base;
+$spacer-lg: $spacer-base * 3;
+$spacer-xl: $spacer-base * 6;
+
+/*
+ * Grid System
+ */
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+);
+
+
+/*
+ * Page Layout
+ */
+$content-area-padding-bottom: $spacer-lg;
+
+
+/*
+ * Common Component Variables
+ */
+$border-radius: .25rem;
+$border-width: 1px;
+
+$focus-box-shadow: 0 0 0 .2rem transparentize( $light-blue, .5 );
+
+$transition: .2s;
+
+
+/*
+ * Alerts
+ */
+$alert-padding-y: .6875rem;
+$alert-padding-x: .9rem;
+$alert-border-radius: $border-radius;
+$alert-margin-bottom: 1rem;
+
+$alert-font-family: $headings-font-family;
+$alert-font-size: $font-size-small;
+$alert-line-height: $line-height-base;
+
+$alert-border-width: $border-width;
+
+
+/*
+ * Buttons
+ */
+$btn-padding-y: .6875rem;
+$btn-padding-x: 1.5rem;
+$btn-min-width: 11rem;
+$btn-lg-min-width: 15rem;
+$btn-border-radius: $border-radius;
+
+$btn-font-family: $headings-font-family;
+$btn-font-size: $font-size-small;
+$btn-font-weight: $font-weight-bold;
+$btn-line-height: $line-height-base;
+
+$btn-border-width: 1px;
+
+$btn-transition: $transition;
+
+$btn-disabled-opacity: .55;
+
+$button-large-font-font-size: $font-size-large;
+$button-large-font-padding-y: .52rem;
+
+$theme-buttons: (
+    'primary': (
+        'background-color': $primary,
+        'border-color': transparent,
+        'color': $color-contrast,
+    ),
+    'secondary': (
+        'background-color': $secondary,
+        'border-color': transparent,
+        'color': $color-contrast,
+    ),
+    'info': (
+        'background-color': $white,
+        'border-color': $gray-lighter,
+        'color': $color-base,
+        'outline/border-color': $gray-lighter,
+        'outline/color': $color-base,
+    ),
+    'success': (
+        'background-color': $success,
+        'border-color': transparent,
+        'color': $color-contrast,
+    ),
+    'warning': (
+        'background-color': $warning,
+        'border-color': transparent,
+        'color': $color-base,
+    ),
+    'danger': (
+        'background-color': $danger,
+        'border-color': transparent,
+        'color': $color-contrast,
+    ),
+);
+
+
+/*
+ * Header Menu
+ */
+$menu-link-padding-xs: 1.094rem .5rem;
+$menu-link-padding: 1.094rem .95rem;
+$submenu-link-padding: 0.7em 1em;
+$menu-link-color: #555;
+$menu-link-color-hover: #222;
+$secondary-menu-background: #edeff8;
+$secondary-menu-title-color: #0f1e26;
+$menu-dropdown-padding: 1.56rem .5rem;
+$menu-dropdown-background-color: #fff;
+
+/*
+ * Forms
+ */
+$input-padding-y: .69rem;
+$input-padding-x: $input-padding-y;
+$input-margin-y: $input-padding-y;
+
+$input-boder-width: 1px;
+$input-boder-color: $bluestone;
+$input-border-radius: $border-radius;
+
+$input-font-size: $font-size-small;
+$input-line-height: $line-height-base;
+
+$input-transition: $transition;
+
+$input-placeholder-color: $bluestone;
+
+$input-focus-border-color: $blue;
+
+
+$label-margin-bottom: $spacer-sm;
+
+
+/*
+ * Ratings
+ */
+$rating-color: $purple-darker;
+$top-choice-rating-color: $green;
+$radial-rating-background: $gray-lightest;
+$rating-disabled-color: $gray-lighter;
+
+/*
+ * Share buttons
+ */
+$share-buttons-color: $primary;
+$share-buttons-border-color: $gray-lighter;
+$share-buttons-background: $white;
+$share-buttons-size: 2.5rem;
+
+/*
+ * Tabs
+ */
+$tab-border-color: $border-color-base;
+$tab-group-background: $white;
+$inactive-tab-background: $gray-lightest;
+
+/*
+ * FAQ
+ */
+$faq-background: $white;
+
+/*
+ * @deprecated Legacy Box shortcode
+ */
+$box-background: $primary-lightest;
+$box-padding: $spacer-md;
+$box-tick-background: $secondary-lightest;
+
+
+
+/*
+ * Content Section / Section Menu
+ */
+$taco-section-menu-description-border-width: 4px;
+$custom-heading-icon-color: $green;
+
+/*
+ * Top CTA Sticky Bar
+*/
+$cta-bar-background: $white;
+$cta-bar-content-color: $gray-light;
+
+/*
+ * Homepage template
+ */
+$homepage-template-hero-section-background-color: #342c74;
+$homepage-hero-new-section-background: rgba($purple-dark-2, 0.1);
+$homepage-hero-highlighted-title: $purple-dark-2;
+
+
+/*
+ * Review template
+ */
+$review-template-text-gray: $gray;
+$review-template-text-gray-lighter: $gray-light;
+$review-template-contrast-color: $secondary;
+
+/*
+ * Category template
+ */
+$cat-color-brand-elements: $blue-light;
+$cat-color-cta: #5154ff;
+$cat-color-secondary-content: #939a9d;
+
+
+/*
+ * Homepage-v2 template
+ */
+$hero-text-color: $white;
+$hero-h2-font-size: $h2-font-size * .75; //24px
+$link-color: $blue-light;
+$background-color-section: $purple-light;
+$background-color-section-lightest: $secondary-lightest;
+$navigation-slider-color: $gray-dark;
+$slider-item-bg: $white;
+$articles-mostread-color: $blue-light;
+$testimonials-avatar-size: 90px;
+$articles-slide-color: $green;
+$collapsible-section-padding-bottom: 90px;
+
+/*
+ * PPC landing template
+ */
+$landing-ppc-color: $blue-lightest;
+$landing-ppc-content-bg: $white;
+$landing-nav-link: $gray-dark;
+$advertising-block-bg: $bluestone;
+$landing-base-size: 1rem;
+$landing-hero-title-size: $landing-base-size * 1.4;
+$ppc-star-rating: $gold;
+$ppc-star-rating-disabled: $gray-lighter;
+$tip-color: $deep-blue;
+$tip-icon-question: '\003F';
+$tip-border-radius: 8px;
+
+/*
+ * PPC sidebar
+ */
+$widget-title-size: $font-size-base * 1.2;
+$textwidget-title-size: $font-size-base;
+$textwidget-base-size: 1rem;
+
+
+/*
+ * PPC landing template - Taco cards
+ */
+$border-taco-expandable-card: $gray-lighter;
+$tick-taco-expandable-color: $green;
+$highlight-taco-expandable-color: $green;
+$ribbon-top-choice-color: #161616;
+$ribbon-exclusive-color: $white;
+$tooltip-block-width: 320px;
+$tooltip-block-height: 84px;
+$border-color: #c6cbd4;
+$tooltip-content-color: $gray-dark;
+
+/*
+ * Sidebar
+ */
+$sidebar-info-color: $gray-light;
+$sidebar-menu-bg: $purple-light;
+
+/*
+ * Best template
+ */
+$sidebar-info-color: $gray-light;
+$gallery-section-bg: #f8f8f8;
+$gallery-nav-bg: #e8e8e8;
+$gallery-font-size: 1rem;
+$padding-component-inner: 1.25rem;
+$list-bullet-color: #1e23ff;
+$content-best-color: #1e23ff;
+$discount-color: $navy;
+$scorecard-top-color: #28c6a1;
+$scorecard-secondary-color: $purple-darker;
+$scorecard-btn-color: $blue;
+$scorecard-border: 1px solid #c6cbd4;
+
+/*
+ * How To template
+ */
+$icon-default-color: $purple-darker;
+
+/*
+ * Pricing tables
+ */
+$table-heading-background: $gray-lightest;
+$table-background: $white;
+$table-heading-color: $purple-darker;
+$table-border-color: #c6cbd4;
+$table-border: 1px solid $table-border-color;
+$table-box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+
+/*
+* Scrollbar
+*/
+$scrollbar-track-bg: $gray-lightest;
+$scrollbar-thumb-bg: rgba($purple-darker, 0.4);
+
+/*
+ * Top-banner-message
+ */
+$top-banner-bg: $purple-darker;
+$top-banner-color: $white;
+
+/*
+* Widgets in sidebar
+*/
+$widget-heading-bg: $navy;
+$widget-content-bg: $white;
+$widget-heading-color: $white;
+$widget-heading-size: 1rem;
+$widget-content-size: $font-size-small;
+$widget-img-size: 44px;
+
+/*
+* Progress bar for Quiz
+*/
+$progress-bar-bg: $purple-darker;
+$progress-bar-step-bg: $purple-dark-2;
+$progress-bar-height: 30px;
+$progress-bar-border-radius: 15px;
+
+/*
+* Quotes Block
+*/
+$quotes-experts-bg: $purple-light;
+$quotes-users-bg: $purple-lightest;
+$quotes-experts-color: $primary;
+$quotes-users-color: $purple-dark-2;
+
+/*
+* Flexi Components - Expert Quotation Block
+*/
+$flexi-quotation-block-color: $blue-light;
+$flexi-quotation-block-bg: $purple-light;
+
+/*
+* Summary Box
+*/
+$summary-heading-bg: $gold-dark;
+$summary-item-bullet-color: $gold;
+$summary-box-link-color: $color-base;
+$recap-summary-bg: $purple-light;
+$recap-heading-color: #1e23ff;
+
+
+/*
+* Meet The Experts Slider
+*/
+$slider-background: $purple-light;
+$slide-height-mobile: 430px;
+$slide-height-tablet: 360px;
+$slide-height-desktop: 264px;

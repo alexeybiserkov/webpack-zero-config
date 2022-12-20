@@ -1,0 +1,56 @@
+.summary-table {
+    width: 100%;
+    vertical-align: middle;
+    border: 0;
+
+    th, td {
+        border: 0;
+    }
+
+
+
+    thead {
+        th {
+            background: $white;
+            text-align: center;
+        }
+    }
+
+    tbody {
+        th {
+            padding: $spacer-md $spacer-sm;
+            color: $color-contrast;
+            background: $navy;
+            text-align: center;
+
+            a,
+            a:hover,
+            a:active,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: $color-contrast;
+            }
+        }
+
+        td {
+            padding: $spacer-md $spacer-sm;
+            background: $gray-light;
+            background: $primary-lightest;
+        }
+
+        tr:nth-child(odd) {
+            th {
+                background: darken($navy, 5%);
+            }
+
+            td {
+                background: darken($primary-lightest, 3%);
+            }
+        }
+    }
+
+}

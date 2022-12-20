@@ -1,0 +1,113 @@
+/*
+ @deprecated Since release of rebrand theme
+ */
+
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+@import '../abstracts/mixins';
+
+@import '../components/advertisement-disclosure';
+
+.comparisons-tabs {
+    padding-top: $spacer-md * 2;
+    background: $secondary-darker;
+    text-align: center;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        font-size: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0;
+        padding: $spacer-sm $spacer-md;
+        border-right: 4px solid $secondary-darker;
+        font-size: $font-size-small;
+        color: $color-contrast;
+        background: $purple-gray-darker;
+    }
+
+    .current-menu-item {
+        background: $purple-gray-dark;
+    }
+
+    li:last-child {
+        border-right: 0;
+    }
+
+    a,
+    a:hover,
+    a:active {
+        color: $color-contrast;
+    }
+}
+
+.category-landing-hero-section,
+.template-horizontal-compchart-title-wrapper {
+    padding: $spacer-md;
+    background: $purple-gray-dark center no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+h1.entry-title {
+    @include font-size( $h3-font-size );
+    font-weight: $font-weight-normal;
+    margin: 0;
+    color: $color-contrast;
+}
+
+.entry-content {
+    margin: $spacer-md auto;
+
+    @include media-breakpoint-up(md) {
+        margin: $spacer-lg auto;
+    }
+
+    h2 {
+        @include font-size($h5-font-size);
+        color: #555;
+        font-weight: $font-weight-normal;
+    }
+}
+
+.website-builder-chart {
+    margin-top: $spacer-md*2;
+}
+
+.website-builder-chart-row {
+    margin-bottom: $spacer-md*1.5;
+    background: $white;
+
+    .builder-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ctas-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $spacer-md;
+    }
+
+    .ctas-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media-breakpoint-only(sm) {
+            display: block;
+        }
+    }
+
+    .btn {
+        display: block;
+        margin: $spacer-xs .2rem;
+    }
+}

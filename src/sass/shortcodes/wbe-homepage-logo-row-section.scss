@@ -1,0 +1,67 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.logo-row {
+    background-color: $background-body;
+    padding: $spacer-xs 0;
+    color: $purple-gray-light;
+    font-size: $font-size-small;
+    text-align: center;
+
+    .section-title {
+        margin-bottom: $spacer-xs;
+    }
+
+    &-item {
+        a {
+            display: block;
+        }
+    }
+
+    ul {
+        padding: 0;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    li {
+        padding: $spacer-xs $spacer-md;
+        margin: 0;
+        list-style: none;
+        display: inline-block;
+        width: 49%;
+        @include media-breakpoint-up(md) {
+            padding: 0 $spacer-md;
+            width: auto;
+        }
+    }
+
+    img {
+        height: auto;
+        max-height: 1.75rem;
+    }
+
+    svg {
+        width: 100px;
+        height: auto;
+    }
+
+    /*
+     * Style variations
+     */
+
+    &.light-grey {
+        color: $gray-light;
+        padding-top: ($spacer-md * 1.8);
+        padding-bottom: ($spacer-md * 1.7);
+
+        img {
+            max-height: 2rem;
+        }
+    }
+}

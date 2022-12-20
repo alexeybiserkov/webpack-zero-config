@@ -1,0 +1,49 @@
+/**
+ * @deprecated Since release of rebrand theme
+ */
+
+.general-review-box {
+    width: 100%;
+    border: 1px solid $border-color-base;
+    padding: $spacer-md;
+
+    @include media-breakpoint-up(md) {
+        width: 50%;
+        float: right;
+        margin: 0 0 $spacer-md $spacer-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 18rem;
+    }
+
+    h3 {
+        margin-top: 0;
+        font-size: $font-size-large;
+    }
+
+    .logo-wrapper {
+        a {
+            display: block;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .taco-star-rating {
+        display: inline-block;
+    }
+
+    .review-summary {
+        margin-bottom: 1em;
+    }
+
+    .review-author,
+    .review-date {
+        margin: 0;
+        font-size: $font-size-small;
+    }
+}

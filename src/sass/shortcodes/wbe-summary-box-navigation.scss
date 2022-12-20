@@ -1,0 +1,90 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.steps-navigation-section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    .steps-navigation-title {
+        font-size: 20px;
+        margin-top: 0;
+
+        @media (min-width: 321px) {
+            font-size: 22px;
+        }
+    }
+
+    .steps-navigation-list {
+        list-style-type: none;
+        padding-inline-start: 0;
+    }
+
+    .list-item {
+        border: 1px solid $border-color-base;
+        margin-bottom: 10px;
+    }
+
+    .list-item-link {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .step-number {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        background-color: $summary-heading-bg;
+        text-align: center;
+        line-height: 2.5;
+        font-weight: bolder;
+        color: #fff;
+        flex-basis: 44px;
+        flex-shrink: 0;
+    }
+
+    .step-title-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding-left: 15px;
+        padding-right: 12px;
+    }
+
+    .step-title {
+        display: inline-block;
+        padding-right: 15px;
+        color: $headings-color;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    .cta-text-block {
+        display: inline-block;
+        font-size: $font-size-smaller;
+        color: $link-custom-color;
+
+        .cta-text {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: 3px;
+        }
+    }
+}

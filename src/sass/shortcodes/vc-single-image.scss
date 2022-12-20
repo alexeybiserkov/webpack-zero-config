@@ -1,0 +1,31 @@
+//stylelint-disable selector-class-pattern
+.wpb_single_image {
+    &.vc_align_center {
+        text-align: center
+    }
+
+    &.vc_align_right {
+        text-align: right
+    }
+
+    &.vc_align_left {
+        text-align: left
+    }
+
+    .vc_figure {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        max-width: 100%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .vc_figure-caption {
+        margin-top: .2em;
+        font-size: .8em
+    }
+}

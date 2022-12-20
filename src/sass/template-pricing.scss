@@ -1,0 +1,281 @@
+@import '../../node_modules/rfs/scss';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Global styles
+@import 'global/global';
+
+@import 'components/advertisement-disclosure';
+@import 'components/breadcrumbs';
+@import 'components/bullet-pointed-list';
+@import 'components/comments';
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/radial-rating';
+@import 'components/share-buttons';
+@import 'components/sidebar-extended';
+@import 'components/star-rating';
+
+.content-pricing {
+    background-color: $background-body;
+
+    .max-content-width {
+        padding-top: 1rem;
+
+        @include media-breakpoint-up(xl) {
+            float: right;
+        }
+    }
+
+    .taco-content-section {
+        padding: 0;
+        border: 0;
+
+        header,
+        .taco-section-header {
+            display: block;
+            margin: 0 0 1rem;
+            padding: 1rem 0 0;
+
+            &:before {
+                left: 0;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+
+        header .taco-section-title {
+            font-size: 25px;
+
+            @include media-breakpoint-up(md) {
+                font-size: $h2-font-size;
+            }
+        }
+    }
+}
+
+.pricing-header-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: $post-background;
+    }
+
+    .breadcrumbs {
+        margin-top: 0;
+    }
+
+    .post-heading {
+        font-size: ($h1-font-size * .75);
+        margin-top: ($spacer-md * 1.25);
+        margin-bottom: $spacer-md;
+
+        @include media-breakpoint-up(md) {
+            font-size: $h1-font-size;
+        }
+    }
+}
+
+.top-cta-bar {
+    background: $cta-bar-background;
+    padding-top: $spacer-sm;
+    padding-bottom: 90px;
+    border-top: 1px solid $border-color-base;
+    position: relative;
+    margin-bottom: $spacer-md;
+
+    @include media-breakpoint-up(md) {
+        border: 1px solid $border-color-base;
+        padding-top: $spacer-md;
+        padding-bottom: $spacer-md;
+        margin: ($spacer-md * 1.5) 0 $spacer-sm;
+    }
+
+    .col {
+        border-left: 1px solid $border-color-base;
+        padding-left: 2rem;
+
+        &:first-of-type,
+        &:last-of-type {
+            border-left: none;
+        }
+
+        &-heading {
+            margin-top: 0;
+            font-size: $font-size-small;
+            text-transform: uppercase;
+
+            @include media-breakpoint-down(sm) {
+                letter-spacing: normal;
+            }
+        }
+
+        &-content {
+            font-size: $font-size-small;
+            color: $cta-bar-content-color;
+            padding-top: 5px;
+        }
+    }
+
+    .logo-col {
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+
+        img {
+            display: block;
+            margin: 0 auto;
+
+            @include media-breakpoint-down(sm) {
+                max-width: 80px;
+            }
+        }
+    }
+
+    .pricing-col {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .rating-col {
+        @include media-breakpoint-up(md) {
+            max-width: 200px;
+        }
+    }
+
+    .cta-col {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 0 0;
+            border-top: 1px solid $border-color-base;
+        }
+    }
+
+    .taco-star-rating {
+        img {
+            display: inline-block;
+        }
+    }
+
+    .btn-cta {
+        padding: 10px 4px 12px;
+        line-height: 1.2;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            min-width: 200px;
+            padding: 12px 20px 14px;
+            width: auto;
+            margin-top: 5px;
+        }
+    }
+
+    &.js-is-sticky {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 10px 15px;
+        box-shadow: 0 -8px 34px rgba(30, 99, 255, 0.2);
+        animation-name: bottom-bar-show;
+        animation-duration: $transition;
+        animation-timing-function: linear;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            animation-name: top-bar-show;
+            bottom: unset;
+            top: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+        }
+
+        .container {
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+            }
+        }
+
+        .row {
+            @include media-breakpoint-down(sm) {
+                align-items: center;
+            }
+        }
+
+        .col-content {
+            @include media-breakpoint-down(sm) {
+                padding-top: 0;
+            }
+        }
+
+        .logo-col {
+            @include media-breakpoint-down(sm) {
+                flex: 0 0 100px;
+                width: 100px;
+
+                img {
+                    margin: 0;
+                }
+            }
+        }
+
+        .rating-col {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        .pricing-col {
+            @include media-breakpoint-down(sm) {
+                display: block;
+                border-left: none;
+                padding-left: 0;
+                margin-left: -10px;
+            }
+        }
+
+        .cta-col {
+            @include media-breakpoint-down(sm) {
+                position: static;
+                padding: 0 15px 0 0;
+                border-top: none;
+            }
+        }
+
+        .col-content {
+            @include media-breakpoint-down(sm) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @keyframes top-bar-show {
+        from {top: -76px}
+        to {top: 0}
+    }
+
+    @keyframes bottom-bar-show {
+        from {bottom: -85px}
+        to {bottom: 0}
+    }
+}

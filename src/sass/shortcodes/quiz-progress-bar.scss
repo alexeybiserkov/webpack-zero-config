@@ -1,0 +1,49 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+
+.quiz-progress-wrapper {
+    margin: 1rem auto;
+    max-width: 1000px;
+
+    .quiz-progress-bar {
+        width: 100%;
+        height: $progress-bar-height;
+        background-color: $progress-bar-bg;
+        border-radius: $progress-bar-border-radius;
+        position: relative;
+        z-index: 1;
+    }
+
+    .indicator {
+        display: block;
+        height: $progress-bar-height;
+        background-color: $progress-bar-step-bg;
+        border-radius: $progress-bar-border-radius;
+        box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .4);
+        text-align: center;
+        font-size: 1rem;
+        line-height: $progress-bar-height;
+        font-weight: $font-weight-semi-bold;
+        color: $color-contrast;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+
+        &.step-1 {
+            width: 25%;
+        }
+
+        &.step-2 {
+            width: 50%;
+        }
+
+        &.step-3 {
+            width: 75%;
+        }
+
+        &.step-4 {
+            width: 100%;
+        }
+    }
+}

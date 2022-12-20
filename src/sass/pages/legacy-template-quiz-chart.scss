@@ -1,0 +1,208 @@
+/*
+ @deprecated Since release of rebrand theme
+ */
+
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+@import '../abstracts/mixins';
+
+@import '../components/advertisement-disclosure';
+
+.entry-header {
+    padding: ($spacer-md * 2.5) 0 $spacer-md;
+    text-align: center;
+
+    h1 {
+        @include font-size( $h2-font-size );
+        font-weight: $font-weight-bold;
+        margin: 0;
+        color: $headings-color;
+    }
+}
+
+.entry-content {
+    padding-top: $spacer-md;
+}
+
+.featured-entry-content {
+    max-width: 760px;
+    margin: 0 auto $spacer-xs;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include media-breakpoint-up(md) {
+        > * {
+            text-align: center !important;
+        }
+    }
+
+    h2,
+    h3 {
+        @include font-size($h6-font-size);
+        color: $color-base;
+        font-weight: $font-weight-normal;
+    }
+}
+
+.adv-disclosure-block {
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-up(md) {
+        text-align: center;
+    }
+}
+
+.quiz-results-chart {
+    .quiz-result-card {
+        background: $color-contrast;
+        padding: $spacer-md $spacer-sm ($spacer-md * 1.5);
+        margin-bottom: $spacer-sm;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: $spacer-md;
+            padding-bottom: 7rem;
+            height: 100%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 4rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding-left: ($spacer-md * 1.5);
+            padding-right: ($spacer-md * 1.5);
+        }
+    }
+
+    .builder-logo {
+        margin-top: $spacer-md;
+        margin-bottom: $spacer-xs;
+        padding: 0;
+        min-height: 100px;
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0;
+        }
+    }
+
+    .builder-title {
+        margin-top: 0;
+        margin-bottom: $spacer-md;
+        font-size: $font-size-base;
+    }
+
+    .builder-description-container {
+        font-size: $font-size-small;
+        margin-bottom: $spacer-sm;
+
+        p {
+            margin-top: 0;
+            margin-bottom: $spacer-md;
+        }
+    }
+
+    .builder-description-text {
+        height: 144px;
+        overflow-y: hidden;
+
+        @media (max-width: 991px) and (min-width: 768px) {
+            height: 210px;
+        }
+    }
+
+    .builder-points-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+
+        @include media-breakpoint-up(md) {
+            margin-top: $spacer-xs;
+        }
+
+        &-item {
+            margin: 0;
+        }
+
+        .point-item-icon {
+            display: inline-block;
+            margin-right: ($spacer-md/2);
+            color: $secondary-darker;
+
+            svg {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .ctas-container {
+        padding-top: $spacer-xs;
+
+        @include media-breakpoint-up(md) {
+            width: 90%;
+            position: absolute;
+            left: 10px;
+            bottom: 20px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            left: 15px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn {
+            display: block;
+            width: 170px;
+            margin: 0 auto $spacer-xs;
+
+            @include media-breakpoint-up(lg) {
+                display: inline-block;
+                width: 48%;
+                padding: 10px 4px;
+            }
+        }
+    }
+
+    .quiz-result-featured {
+        border: 1px solid $top-choice;
+        box-shadow: 0 0 25px -9px rgba(0,0,0,0.3);
+
+        .ribbon-top-choice {
+            display: block;
+            position: absolute;
+            left: -9px;
+            top: 4px;
+            width: 140px;
+            height: 30px;
+            text-transform: uppercase;
+            font-size: $font-size-smaller;
+            line-height: 2;
+            font-weight: $font-weight-bold;
+            text-align: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+            @include media-breakpoint-up(sm) {
+                width: 160px;
+            }
+
+            &.ribbon-top-choice {
+                background-image: url('../img/ribbon-top-choice.svg');
+                color: $ribbon-top-choice-color;
+                z-index: 2;
+            }
+        }
+
+        .point-item-icon {
+            color: $top-choice;
+        }
+    }
+}

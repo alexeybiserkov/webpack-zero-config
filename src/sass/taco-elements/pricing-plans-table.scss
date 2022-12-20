@@ -1,0 +1,271 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.pricing-plans-table {
+    margin: $spacer-md 0;
+
+    .text-tip {
+        margin-bottom: 20px;
+        text-align: right;
+        font-size: $font-size-small;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            @include icon-image('../../img/down-arrow.svg');
+            transform: rotate(-90deg);
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    .pricing-table-section {
+        @include media-breakpoint-up(md) {
+            box-shadow: $table-box-shadow;
+        }
+    }
+
+    .table-wrapper {
+        position: relative;
+        overflow-x: auto;
+        border: $table-border;
+        box-shadow: $table-box-shadow;
+        margin-right: -15px;
+
+        @include media-breakpoint-up(sm) {
+            margin-right: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            box-shadow: none;
+        }
+
+        // scrollbar
+        &::-webkit-scrollbar-track {
+            background-color: $scrollbar-track-bg;
+            border-top: $table-border;
+        }
+
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $scrollbar-thumb-bg;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 10px;
+        }
+    }
+
+    .table {
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.2;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+        }
+    }
+
+    .heading-top-cell {
+        min-width: 140px;
+        height: 105px;
+        padding: 45px 8px 15px;
+        border-right: $table-border;
+        font-size: 1rem;
+        font-weight: bolder;
+        color: $table-heading-color;
+        line-height: 1.2;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-base;
+        }
+
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+
+    .heading-cell {
+        font-size: 13px;
+        color: $headings-color;
+        font-weight: $font-weight-semi-bold;
+        text-align: left;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-small;
+        }
+    }
+
+    .sticky-col {
+        position: sticky;
+        z-index: 10;
+        left: 0;
+        width: 100px;
+        min-width: 100px;
+
+        @include media-breakpoint-up(md) {
+            width: 150px;
+            min-width: 150px;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 100%;
+            background-color: $table-border-color;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+        }
+    }
+
+    .table-header {
+        background-color: $table-heading-background;
+
+        .sticky-col {
+            z-index: 1;
+            background-color: $table-heading-background;
+        }
+    }
+
+    .table-content {
+        background-color: $table-background;
+
+        tr {
+            border-top: $table-border;
+
+            &:first-of-type {
+                border-top: none;
+            }
+        }
+
+        td {
+            padding: 20px 10px;
+            background-clip: padding-box;
+        }
+
+        .content-cell {
+            border-right: $table-border;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
+        .sticky-col {
+            background-color: $table-background;
+        }
+    }
+
+    .table-footer {
+        padding: 25px 0;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            padding: 20px 30px;
+            border: $table-border;
+            border-top: none;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding: 20px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cta-text {
+            @include media-breakpoint-up(md) {
+                display: block;
+                margin-top: $spacer-xs;
+                margin-bottom: $spacer-xs;
+                padding-right: $spacer-md;
+                font-size: 1rem;
+                font-weight: $font-weight-semi-bold;
+                color: $table-heading-color;
+            }
+        }
+
+        .btn-cta {
+            width: 100%;
+            line-height: 1.2;
+
+            @include media-breakpoint-up(md) {
+                width: auto;
+            }
+        }
+    }
+
+    .heading-top-cell:after,
+    .table-header .sticky-col:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $table-heading-color;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .heading-top-cell.editors-choice:after {
+        background-color: $top-choice;
+    }
+
+    .badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        padding: 10px 5px;
+        background-color: $rating-color;
+        text-align: center;
+        font-size: $font-size-smaller;
+        text-transform: uppercase;
+        font-weight: $font-weight-semi-bold;
+        color: $color-contrast;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-small;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: .5rem solid transparent;
+            border-top-color: $rating-color;
+            border-bottom: 0;
+            margin-left: -.5rem;
+            margin-bottom: -.5rem;
+        }
+    }
+
+    .editors-choice .badge {
+        color: #000;
+        background-color: $top-choice;
+
+        &:after {
+            border-top-color: $top-choice;
+        }
+    }
+}

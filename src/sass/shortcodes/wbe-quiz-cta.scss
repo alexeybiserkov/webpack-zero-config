@@ -1,0 +1,54 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+$btn-quiz-bg: #7f50ed;
+
+.quiz-section {
+    margin: 0 0 55px;
+    padding: 110px 20px 20px;
+    text-align: center;
+    background: #ffe083 url('../img/quiz-best-bg-mobile.svg') center top no-repeat;
+    background-size: 240px;
+
+    @include media-breakpoint-up(md) {
+        padding: 20px;
+        background: #ffe083 url('../img/quiz-best-bg.svg') center right no-repeat;
+        background-size: 35%;
+        text-align: left;
+    }
+
+    @include media-breakpoint-up(lg) {
+        background-size: contain;
+    }
+
+    &-content {
+        @include media-breakpoint-up(md) {
+            width: 75%;
+            padding-right: 30px;
+        }
+
+        > * {
+            font-size: $font-size-base;
+            color: $secondary-menu-title-color;
+            font-weight: $font-weight-semi-bold;
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+
+        .btn-quiz {
+            border-radius: 2px;
+            background-color: $btn-quiz-bg;
+            font-size: $font-size-small;
+            color: $color-contrast;
+            margin-bottom: 0;
+            padding: 8px 24px;
+
+            &:hover {
+                color: $color-contrast;
+                opacity: .9;
+                transition: $transition;
+            }
+        }
+    }
+}

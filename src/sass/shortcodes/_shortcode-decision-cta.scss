@@ -1,0 +1,198 @@
+.wbe-decision-cta {
+    background: #507a90;
+    text-align: center;
+    padding: 1.5em;
+    margin-bottom: 35px;
+
+    @media only screen and (max-width: 767px) {
+        padding: 0.8em 0.5em 1em 0.5em;
+
+        h4, .subhead {
+            padding: 0 0.5rem;
+        }
+    }
+
+    // Show / hide mobile & desktop text
+    .desktop-only {
+        @media only screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .mobile-only {
+        @media only screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    // Inner elements
+    .subhead {
+        font-size: 1.5em;
+        margin: 0 0 1em 0;
+        font-weight: normal;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 1.25em;
+            margin: 0 0 0.8em 0;
+        }
+    }
+
+    h4 + .subhead {
+        @media only screen and (max-width: 767px) {
+            position: relative;
+            top: -0.15em;
+        }
+    }
+
+    .content-holder {
+        position: relative;
+
+        @media only screen and (min-width: 1024px) {
+            margin: 0.5em 0;
+        }
+    }
+
+    .grey-top {
+        border-radius: 0.5em 0.5em 0 0;
+        height: 0.5em;
+    }
+
+    .grey-bottom {
+        border-radius: 0 0 0.5em 0.5em;
+        height: 0.6em;
+
+        @media only screen and (min-width: 1024px) {
+            height: 1em;
+        }
+    }
+
+    .grey,
+    .grey-top,
+    .grey-bottom {
+        background-color: #f3f3f3;
+        width: calc(50% - 0.5em);
+        padding-bottom: 1px;
+        position: relative;
+
+        @media only screen and (min-width: 1024px) {
+            width: calc(50% - 1em);
+        }
+    }
+
+    .flex-holder {
+        display: flex;
+        align-content: stretch;
+        padding: 0 0.5em;
+        justify-content: space-between;
+
+        &:not(:last-child) > div:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #f3f3f3;
+        }
+    }
+
+    // Buttons & links
+    .button-look {
+        @include button-like-highlight-layer;
+        text-transform: uppercase;
+        border: none;
+        background-color: $lighter-pink;
+        letter-spacing: 1.4px;
+        font-weight: bold;
+        box-sizing: border-box;
+        width: calc(100% - 1.4em);
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // match wbe-btn (-narrow) - TODO: use wbe-btn class (once available)
+        padding: 0.56rem 1.125rem;
+        font-size: 0.88em;
+        line-height: 1.2;
+        border-radius: 9999999px;
+
+        a {
+            left: 0;
+            right: 0;
+            border-radius: 2em;
+        }
+
+        span {
+            display: block;
+        }
+
+        @media only screen and (max-width: 767px) {
+            padding: 0.56rem 1rem;
+            font-size: 0.825em;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            width: calc(100% - 4em);
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .link-over {
+        width: calc(50% - 1.5em);
+
+        &.a-left {
+            left: 0.5em;
+        }
+
+        &.a-right {
+            right: 0.5em;
+        }
+
+        @media only screen and (max-width: 1023px) {
+            width: calc(50% - 1em);
+        }
+    }
+
+    // higher specificity needed due to existing styles
+    &.wbe-decision-cta {
+        h4 {
+            font-size: 2em;
+            margin: 0 0 0.5em 0;
+            font-weight: bold;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 1.75em;
+            }
+        }
+
+        h4,
+        .subhead,
+        .button-look {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        img {
+            width: 130px;
+            // Set height because of lazy loading. Important needed to override.
+            height: 120px !important;
+            border: none;
+            background-color: transparent;
+            margin-bottom: 0.5em;
+
+            @media only screen and (max-width: 575px) {
+                width: 100px;
+                height: 92px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import 'abstracts/variables';
+
+//Global styles
+@import 'global/global';
+
+@import 'components/advertisement-disclosure';
+@import 'components/bullet-pointed-list';
+@import 'components/breadcrumbs';
+@import 'components/author-info-box';
+@import 'components/comments';
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/post';
+@import 'components/radial-rating';
+@import 'components/share-buttons';
+@import 'components/sidebar-extended';
+@import 'components/star-rating';
+
+
+.content-area {
+    background: transparent;
+}
+
+.entry-content {
+    background: $post-background;
+}

@@ -1,0 +1,140 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../global/grid';
+
+.collapsible-content-section {
+    padding-top: 60px;
+    padding-bottom: 75px;
+    background: #f3effd url('../img/confetti-full-width-mobile.svg') no-repeat bottom center;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 30px;
+        padding-bottom: 0;
+        margin-bottom: $collapsible-section-padding-bottom;
+        background: #f3effd;
+        background-size: 100%
+    }
+
+    &:after {
+        @include media-breakpoint-up(md) {
+            content: '';
+            display: block;
+            height: $collapsible-section-padding-bottom;
+            background-color: $color-contrast;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: -$collapsible-section-padding-bottom;
+        }
+    }
+
+    .container {
+        @include media-breakpoint-up(md) {
+            background: url('../img/confetti-full-width.svg') no-repeat bottom center;
+            background-size: contain;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: 1200px;
+        }
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+        line-height: $line-height-base;
+        margin-top: 0;
+        margin-bottom: $spacer-md;
+
+        @include media-breakpoint-up(md) {
+            font-size: $h2-font-size;
+            line-height: $headings-line-height;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 45px;
+        }
+    }
+
+    .collapsible-content {
+        background-color: $background-body;
+        margin: 0 auto;
+        padding: 25px 20px 15px;
+        box-shadow: 2px 8px 15px 4px rgba(#f3effd, .8);
+
+        @include media-breakpoint-up(md) {
+            max-width: 600px;
+            padding: 50px 70px 60px;
+            letter-spacing: -.2px;
+            position: relative;
+            z-index: 3;
+            top: 70px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: 780px;
+        }
+    }
+
+    .read-more-wrap {
+        a {
+            text-decoration: underline;
+            color: $primary;
+        }
+
+        .block-read-more {
+            height: 0;
+            opacity: 0;
+            transition: height .3s linear;
+
+            br:first-of-type {
+                display: none;
+            }
+        }
+
+        .btn-trigger {
+            cursor: pointer;
+            display: block;
+            margin-top: $spacer-sm;
+            color: $link-color;
+            background-color: transparent;
+            font-size: $font-size-small;
+            font-weight: $btn-font-weight;
+            line-height: 1.2;
+            text-decoration: none;
+            box-shadow: none;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 30px;
+            }
+
+            img {
+                position: relative;
+                left: 2px;
+            }
+        }
+
+        .btn-read-less {
+            img {
+                transform: rotate(180deg);
+                top: -2px;
+            }
+        }
+    }
+
+    .active {
+        .block-read-more {
+            height: auto;
+            opacity: 1;
+        }
+
+        .btn-read-more {
+            display: none;
+        }
+
+        .block-read-less {
+            display: block;
+        }
+    }
+}

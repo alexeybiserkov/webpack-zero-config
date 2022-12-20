@@ -1,0 +1,87 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.winner-card {
+    border: 1px solid $border-color-base;
+    margin: 2rem 0;
+
+    .winner-card-top {
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #f9f9ff;
+
+        h6 {
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .logo-block {
+        position: relative;
+        margin-right: 15px;
+        padding-right: 15px;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 15px;
+            background-color: $border-color-base;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    .icon {
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+    }
+
+    .winner-card-title {
+        margin-top: 0;
+    }
+
+    .winner-card-content {
+        padding: 15px 30px 10px;
+        background-color: #fff;
+
+        @include media-breakpoint-up(sm) {
+            padding-right: 20px;
+        }
+    }
+
+    .text-container {
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 15px;
+        }
+
+        p,
+        ul,
+        ol {
+            margin-bottom: 10px;
+        }
+    }
+
+    .btn {
+        display: block;
+        margin: 8px auto 20px;
+        line-height: 1.5;
+
+        @include media-breakpoint-up(sm) {
+            display: inline-block;
+            min-width: 254px;
+        }
+    }
+}

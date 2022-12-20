@@ -1,0 +1,201 @@
+$text_color: #0f1e26;
+
+.feature-details-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1002;
+    font-family: 'Lato', sans-serif;
+
+    .admin-bar & {
+        @media only screen and (min-width: 600px) {
+            top: 46px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            top: 32px;
+        }
+    }
+
+    .modal-title,
+    .modal-footer-close-button,
+    .details {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90%;
+        max-width: 480px;
+    }
+
+    .modal-footer-close-button,
+    .top-close-button {
+        font-size: 1em;
+        background: #043c58;
+        color: #fff;
+        border-radius: 0;
+        border: none;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .modal-title {
+        height: 50px;
+        z-index: 4;
+        background: #043c58;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        padding: 11px 30px;
+        border-left: 1px solid rgba(0,0,0,.19);
+        overflow-y: hidden;
+        box-sizing: border-box;
+
+        .top-close-button {
+            position: absolute;
+            top: 11px;
+            right: 15px;
+            cursor: pointer;
+        }
+    }
+
+    .modal-footer-close-button {
+        top: auto;
+        bottom: 0;
+        height: 50px;
+        z-index: 3;
+        font-weight: 700;
+        text-align: center;
+        padding: 11px 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,.25);
+        cursor: pointer;
+    }
+
+    // Detail sections
+    .details {
+        height: 100%;
+        z-index: 2;
+        background: #fff;
+        padding-top: 45px;
+        // fix for firefox 'bottom-padding inside absolutely positioned element' bug
+        border-bottom: 55px solid transparent;
+        border-left: 1px solid rgba(0,0,0,.19);
+        box-shadow: 0 0 12px rgba(0,0,0,.2);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        box-sizing: border-box;
+
+        > div {
+            border-bottom: 1px solid #c6cbd4;
+
+            &:first-child {
+                border-top: 1px solid #c6cbd4;
+            }
+        }
+
+        .modal-section-title {
+            background: #f8f8fa linear-gradient(to bottom, #f8f7fb 0%, #eeeef2 100%);
+            color: $text_color;
+            padding: 8px 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+
+    // Builder titles (can hold expand button)
+    .builder-title {
+        position: relative;
+        padding: 8px 10px;
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        align-items: baseline;
+
+        .builder-name {
+            text-transform: uppercase;
+            color: $text_color;
+            font-weight: 700;
+        }
+
+        .comparison-feature {
+            color: $text_color;
+            margin-left: 8px;
+            padding-left: 8px;
+            border-left: 1px solid #969696;
+            font-size: 0.875em;
+            line-height: 0.9;
+
+            ul, li {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                display: none;
+                list-style: none;
+
+                &:first-child {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .content-block {
+        padding: 7px 10px 8px;
+
+        ul, li {
+            list-style-type: disc;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: .2em;
+        }
+
+        p {
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 7px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Expanding content blocks
+    .content-block.taco-expand-area {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border-top: 1px solid #c6cbd4;
+        padding: 0;
+
+        &.closed {
+            display: none;
+        }
+
+        &.content-expand {
+            .content-inner {
+                transform: translateY(0);
+                transition-delay: 0s;
+                opacity: 1;
+            }
+        }
+
+        .content-inner {
+            color: #555;
+            padding: 7px 10px 8px;
+            position: relative;
+            transform: translateY(-15px);
+            transition: all 0.3s ease-in-out 0.15s;
+            opacity: 0.5;
+        }
+    }
+}

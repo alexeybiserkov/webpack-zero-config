@@ -1,0 +1,92 @@
+@import '../../node_modules/rfs/scss';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Global styles
+@import 'global/global';
+
+@import 'components/advertisement-disclosure';
+@import 'components/bullet-pointed-list';
+@import 'components/breadcrumbs';
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/comments';
+@import 'components/radial-rating';
+@import 'components/share-buttons';
+@import 'components/sidebar-extended';
+@import 'components/star-rating';
+
+.content-best {
+    background-color: $background-body;
+
+    .max-content-width {
+        @include media-breakpoint-up(xl) {
+            float: right;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .mobile-full-width {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+}
+
+.best-header-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: $post-background;
+    }
+
+    .breadcrumbs {
+        margin-top: 0;
+    }
+}
+
+.content-best-main {
+    padding-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 1rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-top: 3rem;
+    }
+
+    p + .gallery-lightbox-section {
+        margin-top: 2rem;
+    }
+
+    .taco-content-section {
+        padding: 0;
+        border: 0;
+
+        header,
+        .taco-section-header {
+            margin: 0 0 1rem;
+            padding: 1rem 0 .75rem;
+            border-bottom: 1px solid #c6cbd4;
+
+            &:before {
+                left: 0;
+            }
+        }
+
+        header .taco-section-title {
+            font-size: $h2-font-size;
+        }
+    }
+
+    .taco-cta-container .taco-cta {
+        @include media-breakpoint-down(sm) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

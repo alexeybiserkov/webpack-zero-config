@@ -1,0 +1,44 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+
+.tabgroup {
+    border: 1px solid $tab-border-color;
+    margin: $spacer-md 0;
+    background: $tab-group-background;
+}
+
+.tablist {
+    display: flex;
+
+    .tab {
+        display: block;
+        flex-grow: 1;
+        padding: $spacer-sm;
+        text-align: center;
+        background: $inactive-tab-background;
+        border: 0;
+        border-right: 1px solid $tab-border-color;
+        border-bottom: 1px solid $tab-border-color;
+        cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        &:last-child {
+            border-right: 0;
+        }
+
+        &.active {
+            border-bottom: 0;
+            background: $tab-group-background;
+        }
+    }
+}
+
+.tabpanel {
+    display: none;
+    padding: $spacer-md;
+
+    &.active {
+        display: block;
+    }
+}

@@ -1,0 +1,50 @@
+$orange: #ff6a00;
+$yellow: #f39f1a;
+$text-grey: #555;
+$dark-blue: #003c5a;
+$turquoise: #4cd6bc;
+$pink: #f1334f;
+$lighter-pink: #f86e76;
+$top_links_color: #2d2d2d;
+$light_background: #f4f5f9;
+
+$non-desktop: 'only screen and (max-width: 767px)';
+$desktop: 'only screen and (min-width: 768px)';
+$mobile-tabletportrt: 'only screen and (max-width: 991px)';
+$tabletland-plus: 'only screen and (min-width: 991px)';
+
+@mixin cover-parent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+// ---------------------------------------------------------
+// For buttons, links which can lighten/darken/shadow lift on hover, focus
+// ---------------------------------------------------------
+@mixin button-like-highlight-layer {
+    position: relative;
+
+    // lift button text above layer
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:before {
+        content: '';
+        @include cover-parent;
+        border-radius: inherit;
+        background-color: rgba(0,0,0,0.1);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover, &:focus {
+        &:before {
+            opacity: 1;
+        }
+    }
+}

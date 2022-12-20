@@ -1,0 +1,59 @@
+/**
+ * Custom styles for header - PPC Landing page
+ */
+
+.site-header {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.07);
+    .top-row.top-navigation-ppc {
+        padding-top: $spacer-md  / 2;
+        padding-bottom: $spacer-md  / 2;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 0;
+            padding-bottom: 0;
+            box-shadow: none;
+        }
+
+        .nav-toggle {
+            @include media-breakpoint-down(xs) {
+                border-color: #ebedf3;
+
+                &:after {
+                    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' width='306' height='306' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 306 306' style='fill:%555;'><path d='M270.3 58.65L153 175.95 35.7 58.65 0 94.35l153 153 153-153z'></path></svg>");
+                    background-size: 100%;
+                    opacity: .6;
+                    transition: all $transition;
+                }
+            }
+        }
+    }
+}
+
+.top-navigation-ppc {
+    .site-header-wrapper {
+        @include media-breakpoint-up(md) {
+            padding-top: $spacer-md * 1.5;
+            background-color: $landing-ppc-color;
+        }
+    }
+}
+
+#master-header .top-navigation-ppc {
+    ul {
+        padding-bottom: 3px;
+    }
+
+    ul li {
+        a,
+        button {
+            color: $landing-nav-link;
+            &:hover {
+                opacity: .8;
+            }
+        }
+
+        button:after {
+            background-image: url(../img/down-arrow-dark.svg);
+        }
+    }
+}

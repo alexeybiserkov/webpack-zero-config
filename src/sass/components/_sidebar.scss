@@ -1,0 +1,125 @@
+.sidebar {
+    display: none;
+    align-self: flex-start;
+    margin-top: $spacer-lg;
+    margin-bottom: $spacer-lg;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+
+    //stylelint-disable selector-class-pattern
+    .widget_media_image img,
+    .widget_custom_html img {
+        @extend %responsive-image-full-width;
+    }
+    //stylelint-enable
+}
+
+.widget-sidebar {
+    margin: 0 auto $spacer-lg/2;
+    box-shadow: 0 0 4px rgba($gray-light,0.4);
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &-header {
+        text-align: center;
+        background-color: $widget-heading-bg;
+        padding: $spacer-md/2;
+
+        * {
+            font-size: $widget-heading-size;
+            line-height: $headings-line-height;
+            font-weight: normal;
+            color: $widget-heading-color;
+            margin: 0;
+        }
+    }
+
+    &-subtitle {
+        font-size: $font-size-small;
+        color: $color-base;
+        margin-top: 0;
+        margin-bottom: $spacer-xs/2;
+    }
+
+    &-content {
+        padding: $spacer-xs/2 $spacer-md/2 0;
+        background-color: $widget-content-bg;
+        font-size: $widget-content-size;
+    }
+
+    &-copy {
+        padding: $spacer-sm 0;
+    }
+
+    .tile-item {
+        padding-top: $spacer-sm;
+        padding-bottom: $spacer-xs/2;
+        display: flex;
+        border-bottom: 1px dashed lighten($gray-light, 30%);
+    }
+
+    .tile-item-img {
+        display: block;
+
+        img {
+            display: block;
+            margin: 0 auto;
+            width: $widget-img-size;
+            height: $widget-img-size;
+        }
+
+        svg {
+            width: 44px;
+        }
+    }
+
+    .tile-item-content {
+        padding-left: $spacer-md/2;
+    }
+
+    .tile-item-title {
+        font-size: $widget-content-size;
+        margin-top: 0;
+        margin-bottom: $spacer-xs;
+    }
+
+    .read-more {
+        display: block;
+        padding-top: $spacer-sm;
+    }
+}
+
+.wbe-useful-tools {
+    .tile-item-title {
+        line-height: 1;
+    }
+}
+
+.wbe-experts-team {
+    .tile-item-img {
+        padding-top: 4px;
+
+        img {
+            border-radius: 100%;
+        }
+    }
+}
+
+.wbe-most-popular-articles {
+    .tile-item {
+        align-items: stretch;
+
+        &-title {
+            font-weight: normal;
+        }
+
+        &-img {
+            padding-top: 5px;
+        }
+    }
+}

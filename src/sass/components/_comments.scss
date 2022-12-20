@@ -1,0 +1,143 @@
+@import '../abstracts/variables';
+@import '../components/buttons';
+@import '../components/forms';
+
+//stylelint-disable selector-class-pattern
+.gglcptch.gglcptch_v2,
+.form-submit {
+    width: 100%;
+    padding: 0 $grid-gutter-width / 2;
+    margin: $input-margin-y 0;
+}
+//stylelint-enable
+.comment-list {
+    margin-top: $spacer-md;
+    border-top: 1px solid $gray-lighter;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.comment-list .comment {
+    margin: 15px 0 0;
+    font-size: $font-size-small;
+    font-family: $headings-font-family;
+    border: 0;
+
+    #respond {
+        border-top: 0;
+        padding-top: $spacer-xs;
+    }
+
+    #cancel-comment-reply-link {
+        display: block;
+        margin-bottom: $spacer-sm;
+    }
+}
+
+.comment-header {
+    display: flex;
+    margin-top: 8px;
+
+    .avatar-container {
+        padding-right: $spacer-xs;
+
+        img {
+            border-radius: 100%;
+            float: none;
+            margin: 0;
+        }
+    }
+}
+
+.comment-info {
+    line-height: 1em;
+    padding-top: .12rem;
+
+    .comment-author {
+        display: block;
+        font-style: normal;
+    }
+
+    .time {
+        color: $gray-lighter;
+        font-size: $font-size-smaller;
+    }
+}
+
+.comment-content {
+    margin-top: $spacer-md;
+    font-family: $font-family-base;
+}
+
+.icon-comment {
+    display: inline-block;
+    margin-right: $spacer-xs;
+    position: relative;
+    width: 14px;
+
+    path {
+        fill: $color-base;
+    }
+}
+
+.reply-link-container {
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    margin-top: $spacer-md;
+    padding: $spacer-xs ($spacer-xs /2);
+
+    a {
+        background: transparent;
+        color: $gray;
+    }
+
+    .icon-comment {
+        top: 2px;
+    }
+}
+
+.replies-counter {
+    color: $gray;
+    margin-top: $spacer-md;
+    padding: 0 $spacer-xs;
+}
+
+.children-comments-list {
+    padding-left: $spacer-lg;
+    list-style-type: none;
+}
+#submit-comment[disabled] {
+    background-color: $gray;
+}
+
+#comments .comment-list > .comment {
+    margin-top: $spacer-lg;
+
+    &:first-child {
+        margin-top: $spacer-md;
+    }
+}
+
+#load-more-comments-button-wrapper {
+    text-align: center;
+
+    .btn {
+        max-width: 380px;
+        margin: $spacer-lg auto 0;
+        padding-top: $spacer-sm;
+        padding-bottom: $spacer-sm;
+    }
+
+    .loading {
+        padding-top: $spacer-sm;
+    }
+}
+
+.comments-area {
+    @include content-visibility-size(3000px);
+
+    .logged-in-as {
+        margin-left: 15px;
+    }
+}
+

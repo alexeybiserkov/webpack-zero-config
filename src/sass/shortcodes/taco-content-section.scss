@@ -1,0 +1,137 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+$taco-content-section-border-width: 4px;
+
+.taco-content-section {
+    margin-bottom: $spacer-lg;
+    padding: 0 $spacer-md;
+    border: $taco-content-section-border-width solid $white;
+    background: transparentize($white, .5);
+
+    .taco-back-to-top-link {
+        a,
+        a:hover,
+        a:active {
+            color: $gray-light;
+        }
+
+        img {
+            display: inline-block;
+            margin-left: 10px;
+            position: relative;
+            top: 1px;
+        }
+    }
+
+    header,
+    .taco-section-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0 (-$spacer-md) $spacer-md (-$spacer-md);
+        padding: $spacer-md;
+        background: $white;
+        font-family: $headings-font-family;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 30px;
+            background: url('../img/wbe-h2.svg');
+            margin-right: 15px;
+            position: absolute;
+            left: 16px;
+            top: 24px;
+        }
+
+        > * {
+            display: block;
+        }
+
+        .taco-section-number {
+            font-size: $font-size-larger;
+            line-height: 1;
+            font-weight: $font-weight-bold;
+            padding-right: 8px;
+            text-align: center;
+            color: $purple;
+            word-break: normal;
+        }
+
+        .taco-section-heading {
+            width: 100%;
+        }
+
+        .taco-section-title {
+            display: inline;
+            margin: 0;
+            padding-left: 19px;
+
+            @include media-breakpoint-up(md) {
+                width: auto;
+                padding-right: $spacer-xs;
+            }
+
+            &.primary {
+                font-size: $h2-font-size;
+            }
+
+            &.secondary {
+                font-size: $h3-font-size;
+            }
+        }
+
+        .taco-back-to-top-link {
+            display: none;
+            flex-shrink: 0;
+            text-align: right;
+            font-size: $font-size-small;
+
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+        }
+    }
+
+    footer {
+        margin-top: $spacer-md;
+        padding-bottom: $spacer-sm;
+        text-align: right;
+        font-size: $font-size-small;
+    }
+
+
+    //Vertical chart integration
+    .taco-wbe-vertical-comp-chart {
+        margin-left: -$spacer-md;
+        margin-right: -$spacer-md;
+    }
+
+    //Binary features chart integration
+    .taco-wbe-features-comp-chart {
+        margin-left: -$spacer-md;
+        margin-right: -$spacer-md;
+        width: calc(100% + #{$spacer-md * 2});
+    }
+
+    .taco-section-subtitle {
+        margin: 0;
+        font-size: $h5-font-size;
+
+        @include media-breakpoint-up(md) {
+            display: inline;
+        }
+    }
+}
+
+.post-template-default .taco-content-section {
+    header,
+    .taco-section-header {
+        &:before {
+            top: 18px;
+        }
+    }
+}

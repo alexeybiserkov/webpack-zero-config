@@ -1,0 +1,46 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Global styles
+@import 'global/global';
+
+//Page Layout Components
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/buttons';
+
+//Page In-Content Components
+@import 'components/glider-carousel';
+@import 'shortcodes/wbe-homepage-hero-section';
+@import 'shortcodes/wbe-homepage-hero-new-section';
+@import 'shortcodes/wbe-homepage-logo-row-section';
+@import 'shortcodes/wbe-homepage-mission-section';
+@import 'shortcodes/wbe-homepage-team-section';
+@import 'shortcodes/wbe-homepage-categories-section';
+@import 'shortcodes/wbe-homepage-testimonials-section';
+@import 'shortcodes/wbe-homepage-most-read-section';
+@import 'shortcodes/wbe-homepage-collapsible-content-section';
+@import 'shortcodes/wbe-homepage-plain-content-section'; // Uses taco-elements/accordion
+@import 'shortcodes/wbe-homepage-values-section';
+@import 'shortcodes/wbe-homepage-latest-articles-section';
+
+.page-template-template-homepage-v2 {
+    .content-area {
+        padding-bottom: 0;
+    }
+}
+
+.site-main.homepage-v2 {
+    .vc_row:not(:first-of-type) {
+        @include content-visibility-size(1000px);
+    }
+
+    & > .row {
+        margin-right: 0;
+        margin-left: 0;
+
+        & > .col-sm-12 {
+            padding: 0;
+        }
+    }
+}

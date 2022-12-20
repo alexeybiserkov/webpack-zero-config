@@ -1,0 +1,56 @@
+.form-group {
+    margin-top: $input-margin-y;
+    margin-bottom: $input-margin-y;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: $input-padding-y $input-padding-x;
+    border: $input-boder-width solid lighten($input-boder-color, 20%);
+    border-radius: $input-border-radius;
+    @include font-size($input-font-size);
+    line-height: $input-line-height;
+    transition: $input-transition;
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+    }
+
+    &::placeholder {
+        color: $input-placeholder-color;
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1;
+    }
+
+    &:hover {
+        border-color: $input-boder-color;
+    }
+
+    &:focus {
+        //color: $input-focus-color;
+        border-color: $input-focus-border-color;
+    }
+}
+
+.form-control.form-control-lg {
+    @include media-breakpoint-up(lg) {
+        padding: ( $btn-padding-y * 1.5 ) ( $btn-padding-x * 0.75 );
+        @include font-size($btn-font-size * 1.15);
+    }
+}
+
+select.form-control {
+    background: $white url(../img/down-arrow.svg) no-repeat right .7em top 50%;
+    background-size: .65em auto, 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: $label-margin-bottom;
+    @include font-size($input-font-size);
+}

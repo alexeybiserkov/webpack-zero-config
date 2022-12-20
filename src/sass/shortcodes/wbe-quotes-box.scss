@@ -1,0 +1,125 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.quotes-block {
+    background-color: $quotes-experts-bg;
+    padding: 50px 15px 35px;
+    text-align: center;
+    margin-top: ($spacer-lg/1.5);
+    margin-bottom: $spacer-lg;
+
+    @include media-breakpoint-up(lg) {
+        padding: 30px 40px 50px;
+    }
+
+    &-content {
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 50px;
+        }
+    }
+
+    &-title {
+        font-size: $font-size-base;
+        margin-top: 0;
+        margin-bottom: 10px;
+
+        span {
+            color: $quotes-experts-color;
+        }
+    }
+
+    &-text {
+        font-size: 22px;
+        margin-top: 0;
+        margin-bottom: 10px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 45px;
+        }
+    }
+
+    &-info {
+        font-size: 16px;
+        font-style: italic;
+        margin: 0;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 45px;
+        }
+    }
+
+    &-pattern {
+        width: 100%;
+        max-width: 100%;
+        height: 38px;
+        left: 50%;
+        position: absolute;
+        bottom: -55px;
+        transform: translateX(-50%);
+        mask-image: url('../img/icon-quote-message.svg');
+        background-color: $quotes-experts-color;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+
+        @include media-breakpoint-up(lg) {
+            bottom: -65px;
+        }
+    }
+
+    .quote-symbol {
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: auto;
+    }
+
+    .quote-symbol-left {
+        display: block;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+
+        @include media-breakpoint-up(lg) {
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+    }
+
+    .quote-symbol-right {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &.users-quote {
+        background-color: $quotes-users-bg;
+
+        .quotes-block-title span {
+            color: $quotes-users-color;
+        }
+
+        .quotes-block-pattern {
+            background-color: $quotes-users-color;
+        }
+
+        .quote-symbol svg path {
+            fill: $quotes-users-color;
+        }
+    }
+
+    &.mobile-full-width {
+        @include media-breakpoint-down(sm) {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+}

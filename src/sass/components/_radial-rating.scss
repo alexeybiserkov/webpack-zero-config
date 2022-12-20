@@ -1,0 +1,99 @@
+.taco-radial-rating {
+    .score-area {
+        position: relative;
+        width: 62px;
+        height: 62px;
+        margin: 0 auto;
+        z-index: 5;
+    }
+
+    &.larger .score-area {
+        width: 75px;
+        height: 75px;
+    }
+
+    .circle-score-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        background-color: $radial-rating-background;
+        border-radius: 50%;
+    }
+
+    .border-circ {
+        position: absolute;
+        top: -2px;
+        bottom: -2px;
+        left: -2px;
+        right: -2px;
+        border: 3px $white solid;
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    .semi-circ {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        transform-origin: 0% 50%;
+        background-color: $rating-color;
+
+        &:first-child {
+            z-index: 1;
+            right: auto;
+            left: 0;
+            transform-origin: 100% 50%;
+        }
+
+        &.inactive {
+            background-color: $radial-rating-background;
+        }
+    }
+
+    &.top-choice .semi-circ {
+        background-color: $top-choice-rating-color;
+
+        &.inactive {
+            background-color: $radial-rating-background;
+        }
+    }
+
+
+    .center-circ {
+        position: absolute;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        top: 5px;
+        left: 5px;
+        border-radius: 50%;
+        background-color: $white;
+        z-index: 2;
+
+        p {
+            position: absolute;
+            top: 50%;
+            margin: 0;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%;
+            font-size: 1.375em;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    &.larger .center-circ {
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+        top: 6px;
+        left: 6px;
+
+        p {
+            font-size: 1.625em;
+        }
+    }
+}

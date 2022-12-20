@@ -1,0 +1,41 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+$border-normal-width: 2px;
+$border-colored-width: 3px;
+$border-normal-color: darken($gray-lightest, 5);
+
+.affiliates-list-wrapper {
+
+    border: $border-normal-width solid $border-normal-color;
+    border-top-width: $border-colored-width;
+    border-top-color: $blue;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 2em;
+
+    @include media-breakpoint-up(sm) {
+        border-top-width: $border-normal-width;
+        border-top-color: $border-normal-color;
+        border-left-width: $border-colored-width;
+        border-left-color: $blue;
+    }
+
+    a {
+        font-weight: $font-weight-semi-bold;
+        color: $blue;
+    }
+
+    h3 {
+        font-size: 2rem;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+ol.affiliates-list {
+    padding-inline-start: 1em;
+}

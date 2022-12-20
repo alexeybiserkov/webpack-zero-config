@@ -1,0 +1,27 @@
+.social-share-bar {
+    display: flex;
+    margin: $font-size-base 0;
+    @include content-visibility-size(500px);
+
+    a {
+        display: block;
+        flex-grow: 0;
+        color: $share-buttons-color;
+        border: 1px solid $share-buttons-border-color;
+        border-right: 0;
+        background: $share-buttons-background;
+        width: $share-buttons-size;
+        height: $share-buttons-size;
+        padding-top: $share-buttons-size * .16;
+        font-size: 1rem;
+        text-align: center;
+
+        &:last-child {
+            border-right: 1px solid $share-buttons-border-color;
+        }
+    }
+
+    img {
+        max-height: 16px;
+    }
+}

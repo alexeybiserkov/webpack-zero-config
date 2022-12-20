@@ -1,0 +1,27 @@
+/*
+Created for posts & pages w/default template:
+    - single.php
+    - page.php
+*/
+
+@import '../../node_modules/rfs/scss';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Global styles
+@import 'global/global';
+
+@import 'components/advertisement-disclosure';
+@import 'components/author-info-box';
+@import 'components/breadcrumbs';
+@import 'components/comments';
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/general-review-box';
+@import 'components/post';
+@import 'components/radial-rating';
+@import 'components/share-buttons';
+@import 'components/sidebar';
+@import 'components/star-rating';
+
+@import 'pages/quiz';

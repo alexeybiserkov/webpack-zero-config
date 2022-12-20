@@ -1,0 +1,236 @@
+@import '../../node_modules/rfs/scss';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//Global styles
+@import 'global/global';
+
+@import 'components/advertisement-disclosure';
+@import 'components/breadcrumbs';
+@import 'components/bullet-pointed-list';
+@import 'components/comments';
+@import 'components/header';
+@import 'components/header-menus';
+@import 'components/radial-rating';
+@import 'components/share-buttons';
+@import 'components/sidebar-extended';
+@import 'components/star-rating';
+
+.content-versus {
+    background-color: $background-body;
+
+    .max-content-width {
+        padding-top: $spacer-lg;
+
+        @include media-breakpoint-up(xl) {
+            float: right;
+        }
+    }
+
+    .entry-header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @include media-breakpoint-up(sm) {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            background-color: $post-background;
+        }
+
+        .breadcrumbs {
+            margin-top: 0;
+        }
+    }
+
+    .taco-content-section {
+        padding: 0;
+        border: 0;
+
+        header,
+        .taco-section-header {
+            align-items: flex-start;
+            padding: 0;
+            margin: 0 0 1.5rem;
+
+            &:before {
+                left: 0;
+                top: 8px;
+            }
+        }
+    }
+
+    // CTA sticky
+    .cta-vs-bar {
+        margin-top: 25px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid $border-color-lighter;
+            background-color: $cta-bar-background;
+            padding: 15px;
+            width: 50%;
+            height: 148px;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+                align-items: center;
+                padding: 10px 20px;
+                width: 46%;
+                height: 105px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding: 10px 30px;
+            }
+        }
+
+        .info-col {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+            }
+        }
+
+        .taco-radial-rating,
+        .logo {
+            display: inline-block;
+        }
+
+        .taco-radial-rating {
+            margin-right: 10px;
+
+            .score-area {
+                width: 47px;
+                height: 47px;
+                @include media-breakpoint-down(xs) {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+
+            .center-circ p {
+                font-size: 1rem;
+                line-height: 1;
+            }
+        }
+
+        .logo {
+            img {
+                display: block;
+                max-height: 60px;
+                width: auto;
+
+                @include media-breakpoint-up(md) {
+                    max-height: 80px;
+                }
+            }
+
+            svg {
+                width: 60px;
+                height: auto;
+            }
+        }
+
+        .btn-cta {
+            width: 100%;
+            padding-left: 4px;
+            padding-right: 4px;
+
+            @include media-breakpoint-up(md) {
+                min-width: 130px;
+                width: auto;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+
+        .separate-block {
+            h6 {
+                margin-top: $spacer-xs;
+            }
+        }
+
+        .top-choice {
+            border-bottom: 3px solid $top-choice;
+
+            .taco-radial-rating .semi-circ {
+                background-color: $top-choice;
+            }
+        }
+    }
+
+    .cta-vs-bar.js-is-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: $cta-bar-background;
+        box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+
+        .container {
+            max-width: 820px;
+        }
+
+        .cta-section {
+            border: none;
+            height: 65px;
+            width: 48%;
+            flex-direction: row;
+            @include media-breakpoint-down(sm) {
+                height: 100px;
+                width: 48%;
+                padding: 8px 0;
+                flex-wrap: wrap;
+            }
+        }
+
+        .info-col {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 2px;
+                .center-circ p {
+                    font-size: $font-size-small;
+                }
+            }
+        }
+
+        .cta-col {
+            margin: 0;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        .logo img {
+            max-height: 60px;
+            width: auto;
+            @include media-breakpoint-down(sm) {
+                max-height: 40px;
+            }
+        }
+        .btn-cta {
+            @include media-breakpoint-down(sm) {
+                padding: 4px;
+            }
+        }
+    }
+}
+
+.post-template-template-versus #ot-sdk-btn-floating.ot-floating-button {
+    @include media-breakpoint-down(sm) {
+        bottom: 110px;
+    }
+}

@@ -1,0 +1,102 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.values {
+    &-section {
+        padding-top: $spacer-lg;
+        padding-bottom: $spacer-lg;
+        background-color: $secondary-darker;
+        color: #fff;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 4.5rem;
+            padding-bottom: 5.5rem;
+        }
+
+        .container-fluid {
+            @include media-breakpoint-up(xl) {
+                padding: 0 95px;
+            }
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+
+            @include media-breakpoint-up(md) {
+                font-size: $h2-font-size;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+
+    &-item {
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+            text-align: left;
+        }
+    }
+
+    &-title {
+        font-size: $font-size-medium;
+        color: #fff;
+        margin-top: 0;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-large;
+        }
+    }
+
+    &-icon {
+        width: 60px;
+        height: 65px;
+        position: relative;
+        margin: 0 auto 15px;
+
+        @include media-breakpoint-up(md) {
+            margin: 0 0 15px;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: $purple-dark-2;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -20px;
+
+            @include media-breakpoint-up(md) {
+                left: 0;
+                margin-left: 0;
+            }
+        }
+
+        svg {
+            font-size: 40px;
+            color: $purple-dark-2;
+        }
+
+    }
+
+    &-description {
+        margin-bottom: 0;
+        font-size: $font-size-small;
+        line-height: 1.3;
+
+        @include media-breakpoint-up(md) {
+            line-height: 1.45;
+        }
+    }
+}

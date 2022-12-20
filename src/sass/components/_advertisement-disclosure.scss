@@ -1,0 +1,22 @@
+.adv-disclosure-block {
+    font-family: $font-family-fallback;
+    font-size: $font-size-small;
+
+    .learn-more {
+        color: $color-base;
+        text-decoration: underline;
+        display: block;
+
+        @include media-breakpoint-up(sm) {
+            display: inline-block;
+        }
+    }
+}
+
+.text-color {
+    .adv-disclosure-block * {
+        @include media-breakpoint-up(sm) {
+            color: $purple-darker;
+        }
+    }
+}

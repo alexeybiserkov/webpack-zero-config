@@ -1,0 +1,138 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+/*
+ * Base styles
+ */
+.btn,
+a.btn {
+    display: inline-block;
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    @include font-size($btn-font-size);
+    color: $color-base;
+    text-align: center;
+    line-height: $btn-line-height;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: $btn-border-width solid transparent;
+    border-radius: $btn-border-radius;
+    padding: $btn-padding-y $btn-padding-x;
+    transition: $btn-transition;
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:hover {
+        color: $color-base;
+        text-decoration: underline;
+    }
+
+    &:focus,
+    &:active {
+        outline: 0;
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: $btn-disabled-opacity;
+        cursor: default;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+//stylelint-disable no-descending-specificity
+// Future-proof disabling of clicks on `<a>` elements
+fieldset:disabled a.btn {
+    pointer-events: none;
+}
+//stylelint-enable
+
+
+/*
+ * Variants
+ */
+@each $color, $variant in $theme-buttons {
+    .btn-#{$color},
+    a.btn-#{$color} {
+        @include button-variant($variant);
+    }
+}
+
+@each $color, $variant in $theme-buttons {
+    .btn-outline-#{$color},
+    a.btn-outline-#{$color} {
+        @include button-outline-variant($variant);
+    }
+}
+
+//Link-styled buttons
+.btn-link {
+    display: inline;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+}
+
+
+/*
+ * Sizes
+ */
+.btn.btn-large-font {
+    font-size: $button-large-font-font-size;
+    padding-top: $button-large-font-padding-y;
+    padding-bottom: $button-large-font-padding-y;
+}
+
+.btn.btn-lg {
+    @include media-breakpoint-up(lg) {
+        padding: ( $btn-padding-y * 1.5 ) ( $btn-padding-x * 0.8 );
+        @include font-size($btn-font-size * 1.15);
+    }
+}
+
+.btn.btn-sm {
+    padding: ( $btn-padding-y * .4 ) ( $btn-padding-x * .4 );
+}
+
+
+/*
+ * Width variants
+ */
+.btn-fixed-width {
+    min-width: $btn-min-width;
+    &.btn-lg { min-width: $btn-min-width * 1.1; }
+    &.btn-sm { min-width: $btn-min-width * .77; }
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+
+/**
+ * @deprecated Since release of rebrand theme. Classes used by the [button] shortcode on legacy content
+ */
+.btn.full-span {
+    width: 100%;
+}
+.btn.large {
+    font-size: $font-size-large;
+}
+.legacy-buton-block {
+    width: 100%;
+    text-align: center;
+}

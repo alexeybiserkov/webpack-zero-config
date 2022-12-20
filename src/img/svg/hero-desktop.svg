@@ -1,0 +1,18 @@
+
+<svg width="1440px" height="640px" viewBox="0 0 756 342" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="52.9943136%" y1="53.9868691%" x2="78.0071829%" y2="78.9284499%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.02" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.08" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="WBE-homepage-web-and-mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wbe_homepage_" transform="translate(0.000000, -114.000000)" fill="url(#linearGradient-1)">
+            <g id="Hero" transform="translate(0.000000, 114.000000)">
+                <g id="Rectangle">
+                    <polygon transform="translate(174.174885, 167.000000) rotate(-45.000000) translate(-174.174885, -167.000000) " points="-531 -538.174885 879.34977 -243.825115 585 577.825115 -236.65023 872.174885"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

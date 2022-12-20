@@ -1,0 +1,168 @@
+@import 'vars-mixins';
+
+//-----------------------------------------------------------------
+// Sticky 'sidebar' - best builders
+//-----------------------------------------------------------------
+
+.wbe-ppc-sidebar-best-builders {
+
+    @media only screen and (min-width: 768px) {
+        &.will-fix {
+            padding-bottom: 20px;
+            width: calc(100% - 30px);
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        position: static !important;
+    }
+
+    a:not(.wbe-btn) {
+        text-decoration: underline;
+        color: #555;
+        display: block;
+        text-align: center;
+        margin: 0.5em auto 0 auto;
+        font-size: 0.875em;
+    }
+
+    .wbe-btn {
+        text-transform: uppercase;
+        width: 100%;
+        max-width: 200px;
+        margin: 0.2em auto 0;
+    }
+
+    .hide-when-space-restrict {
+        @media only screen and (min-width: 768px) and (max-width: 899px) {
+            display: none;
+        }
+    }
+
+    .bb-title {
+        background-color: $dark-blue;
+        padding: 0.65em 0.75em;
+        margin-bottom: 0.75em;
+        position: relative;
+
+        h2 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.25rem;
+            line-height: 1.1;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 2em;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 7px 6px 0 6px;
+            border-color: $dark-blue transparent transparent transparent;
+        }
+    }
+
+    .wbe-card.builder-item {
+        width: 100%;
+        border: 0;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+        margin: 0 0 0.65em 0;
+        align-content: stretch;
+
+        &.wbe-card-highlight {
+            border: 1px solid $yellow;
+        }
+    }
+
+    .builder-right,
+    .builder-left {
+        width: 50%;
+        padding: 0.85em 1em 0.65em 1em;
+        box-sizing: border-box;
+        position: relative;
+
+        @media only screen and (min-width: 768px) and (max-width: 899px) {
+            padding: 0.85em 0.5em 0.65em 0.5em;
+        }
+    }
+
+    .builder-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.justify-center {
+            justify-content: center;
+
+            .wbe-common-button-look {
+                margin-top: 0;
+                margin-bottom: 0.2;
+            }
+        }
+    }
+
+    .builder-left:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 1em;
+        bottom: 1em;
+        width: 1px;
+        background-color: #eee;
+    }
+
+    .stars-holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5em;
+
+        @media only screen and (min-width: 768px) and (max-width: 899px) {
+            .fa {
+                font-size: 0.875em;
+            }
+        }
+    }
+
+    .star-number {
+        font-size: 0.875em;
+        font-weight: bold;
+        padding-right: 0.25em;
+    }
+
+    .taco-star-rating {
+        color: $yellow;
+    }
+
+    .logo {
+        // ie not IE11 as this means the inner image will not scale correctly
+        @supports(display: flex) {
+            display: flex;
+            align-items: center;
+        }
+
+        // Standardised height needed for calculating height of fixed items
+        height: 2.5em;
+
+        img {
+            margin: 0 auto;
+            display: block;
+            border: none;
+            max-height: 2.5em;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    // Ribbon and highlight-only adjustments
+    .wbe-card.wbe-card-has-ribbon {
+        padding-top: 0;
+
+        .logo {
+            margin-top: 1rem;
+        }
+    }
+}

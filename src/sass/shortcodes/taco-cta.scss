@@ -1,0 +1,112 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.taco-cta-container {
+    padding: $spacer-sm 0;
+    text-align: center;
+}
+
+.taco-cta-container.image-cta-block,
+.taco-cta-container.content-cta-block {
+    background: $primary-lightest;
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+
+    h4.block-title {
+        margin-top: 0;
+        margin-bottom: .1rem;
+    }
+
+    .text-container {
+        text-align: left;
+    }
+
+    &.secondary {
+        background: $secondary-lightest;
+    }
+}
+
+.taco-cta-container.content-cta-block {
+    .text-and-button-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+
+    .text-container {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: .8rem;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+
+        @include media-breakpoint-down(sm) {
+            display: block;
+            text-align: left;
+        }
+    }
+}
+
+.taco-cta-container.image-cta-block {
+    @include media-breakpoint-up(md) {
+        flex-wrap: nowrap;
+    }
+
+    .image-container {
+        width: 100%;
+        margin: 0 15px 0 0;
+
+        @media (min-width: 768px) {
+            flex: 0 0 86px;
+            width: 86px;
+        }
+
+        @media (min-width: 992px) {
+            flex: 0 0 165px;
+            width: 165px;
+        }
+    }
+
+    img {
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+        background: 0;
+    }
+
+    .text-container {
+        margin-bottom: .8rem;
+    }
+
+    .text-and-button-container {
+        display: block;
+        width: auto;
+        flex-grow: 1;
+    }
+
+    .button-container {
+        display: block;
+        text-align: left;
+    }
+
+    &.only-desktop-image {
+        .image-container {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+        }
+    }
+}

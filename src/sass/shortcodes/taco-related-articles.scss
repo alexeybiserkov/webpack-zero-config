@@ -1,0 +1,123 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/placeholders';
+
+.taco-related-articles {
+    @include content-visibility-size(1000px);
+    margin: $spacer-lg 0;
+
+    img {
+        @extend %responsive-image-full-width;
+        border: 1px solid $border-color-base;
+    }
+
+    .thumbnail {
+        @include media-breakpoint-up(md) {
+            height: 220px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 268px;
+        }
+    }
+
+    .post-info {
+        @include media-breakpoint-up(md) {
+            padding-top: 5px;
+        }
+    }
+
+    .post-title {
+        margin-top: 0;
+        margin-bottom: $spacer-xs;
+
+        a {
+            color: $headings-color;
+        }
+    }
+
+    .post-date {
+        font-size: $font-size-small;
+
+        a {
+            color: $gray-light;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        margin: $spacer-md 0;
+
+        & + & {
+            margin-top: $spacer-lg;
+        }
+
+        .article {
+            display: flex;
+            align-items: center;
+            margin-top: $spacer-xs;
+            background: $gray-lightest;
+            padding-top: $spacer-sm;
+            padding-bottom: $spacer-sm;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .thumbnail {
+            width: 4rem;
+            flex-shrink: 0;
+            margin-right: $spacer-sm;
+        }
+
+        .post-title {
+            margin-top: 0;
+            margin-bottom: $spacer-xs;
+        }
+
+        .post-date {
+            margin: 0;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        h3 {
+            text-align: center;
+            margin-bottom: $spacer-md*1.5;
+        }
+
+        .article {
+            margin-bottom: $spacer-md;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        h3,
+        .article {
+            margin-bottom: $spacer-md*2;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        h3 {
+            margin-bottom: $spacer-lg;
+        }
+    }
+}
+
+.max-content-width {
+    .taco-related-articles .thumbnail {
+        @include media-breakpoint-up(md) {
+            height: 136px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            height: 150px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            height: 168px;
+        }
+    }
+}

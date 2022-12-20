@@ -1,0 +1,188 @@
+@import '../../../node_modules/rfs/scss';
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+.hero-cta {
+    &-content {
+        padding: ($spacer-base * 2) 0;
+        background-color: $navy;
+        color: $hero-text-color;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            padding: ($spacer-base * 4.3) 0;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 55%;
+            background: url('../img/hero-mobile.svg') center bottom no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include media-breakpoint-up(md) {
+                width: 55%;
+                height: 100%;
+                background: url('../img/hero-desktop.svg') center right no-repeat;
+            }
+        }
+
+        h1.hero-cta-title {
+            font-size: $h1-font-size * .6;
+            line-height: 1.5;
+
+            @include media-breakpoint-up(lg) {
+                font-size: $h1-font-size;
+                line-height: $headings-line-height;
+            }
+        }
+
+        h2.hero-cta-subtitle {
+            font-size: $hero-h2-font-size * .85;
+
+            @include media-breakpoint-up(md) {
+                font-size: $hero-h2-font-size;
+            }
+        }
+    }
+
+    &-title {
+        color: $hero-text-color;
+        margin: 0 auto;
+        padding: 0 1rem;
+        max-width: 300px;
+
+        @include media-breakpoint-up(xl) {
+            padding-right: $spacer-xl;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin: 0;
+            min-width: 100%;
+            padding: 0;
+        }
+    }
+
+    &-subtitle {
+        color: $color-contrast;
+        font-family: $headings-font-family;
+        margin: $spacer-md 0;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: $spacer-md * 1.5;
+        }
+    }
+
+    &-col {
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+        }
+
+        @include media-breakpoint-down (sm) {
+            padding: 0 ($spacer-md * 1.5);
+        }
+    }
+
+    &-info {
+        @include media-breakpoint-up(xl) {
+            padding-left: $spacer-xl;
+        }
+
+        p {
+            font-size: $font-size-base * .9;
+            color: darken($hero-text-color, 23%);
+
+            @include media-breakpoint-up(md) {
+                font-size: $font-size-base;
+                letter-spacing: -.2px;
+                color: $hero-text-color;
+            }
+        }
+    }
+
+    &-description {
+        @media only screen and (max-width: 500px) and (min-width: 375px) {
+            padding: 0 2rem;
+        }
+    }
+
+    &-quiz {
+        padding-top: $spacer-base * 2;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 0;
+            padding-left: 4rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 2rem;
+        }
+    }
+
+    &-button {
+        .btn {
+            padding: .5rem 1.5rem;
+            min-width: 14.25rem;
+        }
+    }
+
+    &-subtext {
+        color: darken($hero-text-color, 20%);
+        font-size: $font-size-small;
+        letter-spacing: .04px;
+
+        @include media-breakpoint-up(md) {
+            letter-spacing: -.16px;
+        }
+    }
+}
+
+#hp-quiz-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    background: $white;
+    padding-top: $spacer-lg + 3rem;
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: $white;
+        padding: $spacer-md;
+        margin-bottom: $spacer-lg;
+        border-bottom: 1px solid $purple-darker;
+        line-height: 0;
+
+        @include media-breakpoint-up(md) {
+            text-align: center;
+        }
+    }
+
+    .site-logo {
+        width: 16rem;
+        height: auto;
+    }
+
+    .close-button {
+        position: absolute;
+        right: $spacer-md;
+    }
+
+    .quiz-wrapper {
+        text-align: center;
+    }
+}

@@ -1,0 +1,11 @@
+<svg width="55px" height="51px" viewBox="0 0 55 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="top-choice" transform="translate(27.000000, 24.500000) rotate(-90.000000) translate(-27.000000, -24.500000) translate(0.500000, -3.500000)">
+            <polygon id="Path-3-Copy-2" fill="#27936F" fill-rule="nonzero" transform="translate(49.453595, 51.993347) rotate(90.000000) translate(-49.453595, -51.993347) " points="50.1262637 50.5397512 53.3199889 53.4469423 45.5872008 53.4469423"></polygon>
+            <polygon id="Path-2" fill="#38D39F" fill-rule="nonzero" points="0.75195312 1.56445312 20.624783 1.56445312 50.9071904 32.7931858 50.9071904 52.6660156"></polygon>
+            <text id="TOP" transform="translate(30.372583, 22.627417) rotate(45.000000) translate(-30.372583, -22.627417) " font-family="Lato-Bold, Lato, sans-serif" font-size="10" font-weight="bold" letter-spacing="-0.0749999881" fill="#FFFFFF">
+                <tspan x="20.582583" y="26.127417">TOP</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

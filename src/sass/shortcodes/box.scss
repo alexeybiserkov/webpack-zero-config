@@ -1,0 +1,38 @@
+@import '../abstracts/variables';
+
+.box {
+    background: $box-background;
+    padding: $box-padding;
+    margin: $spacer-md 0;
+
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child,
+    > p:first-child {
+        margin-top: 0;
+    }
+
+    > br:first-child {
+        display: none;
+    }
+
+    > p:last-child {
+        margin-bottom: 0;
+    }
+
+    &.icon {
+        background-repeat: no-repeat;
+        background-position: 20px 45%;
+    }
+
+    &.tick {
+        background-color: $box-tick-background;
+    }
+
+    &.tick.icon {
+        padding-left: $spacer-lg;
+    }
+}

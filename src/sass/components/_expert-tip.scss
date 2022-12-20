@@ -1,0 +1,168 @@
+#expert-tip-global {
+    visibility: hidden;
+    position: absolute;
+    z-index: 50;
+
+    @include media-breakpoint-down(sm) {
+        position: fixed;
+        top: unset !important;
+        bottom: 0;
+        left: 0 !important;
+        right: 0;
+    }
+}
+
+.expert-tip {
+    &-block {
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 22;
+    }
+
+    &-holder {
+        display: inline-block;
+        margin-left: 18px;
+        font-size: $font-size-small;
+        border-bottom: 1px dashed $tip-color;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            content: $tip-icon-question;
+            display: block;
+            position: absolute;
+            left: -18px;
+            top: 6px;
+            width: 13px;
+            height: 13px;
+            background-color: $tip-color;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+
+    &-wrapper {
+        background-color: $background-body;
+        font-size: 13px;
+        line-height: 1.4;
+
+        @include media-breakpoint-up(md) {
+            max-width: 470px;
+            min-width: 140px;
+            width: auto;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            border: solid #c6cbd4;
+            border-width: 1px 1px 1px 0;
+            border-radius: $tip-border-radius;
+            filter: drop-shadow(-1px 0px 1px #c6cbd4);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, .1);
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: -13px;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 20px solid transparent;
+                border-right: 16px solid $background-body;
+                border-bottom: 20px solid transparent;
+            }
+        }
+
+        strong {
+            color: $tooltip-content-color;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-inline-start: 20px;
+        }
+
+        p,
+        ul {
+            margin-top: 0;
+            margin-bottom: $spacer-xs;
+        }
+
+        .close-tip-btn {
+            @media (min-width: 768px) and (max-width: 1024px) {
+                display: block;
+                width: 24px;
+                height: 24px;
+                background: url('../img/icon-close-black.svg') center no-repeat;
+                margin-right: 4px;
+                position: absolute;
+                top: 3px;
+                right: 3px;
+            }
+        }
+
+        .expert-tip-panel-mobile {
+            background-color: #ebebeb;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 6px 10px;
+            font-size: $font-size-large;
+            line-height: $line-height-base;
+            font-weight: bold;
+            color: $headings-color;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+
+        .close-expert-tip-btn {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url('../img/icon-close-black.svg') center no-repeat;
+            margin-right: 4px;
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    &-content {
+        padding: 12px 10px;
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            padding: 12px 30px 12px 10px;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 820px) and (max-device-height: 896px) and (orientation : landscape) {
+    .expert-tip-wrapper {
+        position: fixed !important;
+        top: unset !important;
+        bottom: 0;
+        left: 0 !important;
+        right: 0;
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .expert-tip-panel-mobile {
+        display: block !important;
+    }
+
+    .close-tip-btn {
+        display: none !important;
+    }
+}

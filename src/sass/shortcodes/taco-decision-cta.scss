@@ -1,0 +1,203 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.wbe-decision-cta {
+    background: $deep-purple;
+    text-align: center;
+    padding: $spacer-md;
+    margin-bottom: 35px;
+
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 0.8em 0.5em 1em 0.5em;
+
+        h4, .subhead {
+            padding: 0 0.5rem;
+        }
+    }
+
+    // Show / hide mobile & desktop text
+    .desktop-only {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .mobile-only {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    // Inner elements
+    .subhead {
+        font-size: 1.5em;
+        margin: 0 0 1em 0;
+        font-weight: normal;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.25em;
+            margin: 0 0 0.8em 0;
+        }
+    }
+
+    h4 + .subhead {
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            top: -0.15em;
+        }
+    }
+
+    .content-holder {
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            margin: 0.5em 0;
+        }
+    }
+
+    .grey-top {
+        border-radius: 0.5em 0.5em 0 0;
+        height: 0.5em;
+    }
+
+    .grey-bottom {
+        border-radius: 0 0 0.5em 0.5em;
+        height: 0.6em;
+
+        @include media-breakpoint-up(lg) {
+            height: 1em;
+        }
+    }
+
+    .grey,
+    .grey-top,
+    .grey-bottom {
+        background-color: $white;
+        width: calc(50% - 0.5em);
+        padding-bottom: 1px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            width: calc(50% - 1em);
+        }
+    }
+
+    .flex-holder {
+        display: flex;
+        align-content: stretch;
+        padding: 0 0.5em;
+        justify-content: space-between;
+
+        &:not(:last-child) > div:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: $white;
+        }
+    }
+
+    // Buttons & links
+    .button-look {
+        text-transform: uppercase;
+        border: none;
+        background-color: $primary;
+        letter-spacing: 1.4px;
+        font-weight: bold;
+        box-sizing: border-box;
+        width: calc(100% - 1.4em);
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.56rem 1.125rem;
+        font-size: 0.88em;
+        line-height: 1.2;
+        border-radius: 9999999px;
+
+        a {
+            left: 0;
+            right: 0;
+            border-radius: 2em;
+        }
+
+        span {
+            display: block;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 0.56rem 1rem;
+            font-size: 0.825em;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: calc(100% - 4em);
+        }
+    }
+
+    .grey:last-child {
+        .button-look {
+            background: $secondary;
+        }
+    }
+
+    .link-over {
+        width: calc(50% - 1.5em);
+
+        &.a-left {
+            left: 0.5em;
+        }
+
+        &.a-right {
+            right: 0.5em;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: calc(50% - 1em);
+        }
+    }
+
+    // higher specificity needed due to existing styles
+    //stylelint-disable no-descending-specificity
+    &.wbe-decision-cta {
+        h4 {
+            font-size: 2em;
+            margin: 0 0 0.5em 0;
+            font-weight: bold;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 1.75em;
+            }
+        }
+
+        h4,
+        .subhead,
+        .button-look {
+            line-height: 1.1;
+            color: $white;
+        }
+
+        img {
+            border: none;
+            background-color: transparent;
+            margin-bottom: 0.5em;
+
+            @media only screen and (max-width: 575px) {
+                width: 100px;
+                height: 92px !important;
+            }
+        }
+    }
+}

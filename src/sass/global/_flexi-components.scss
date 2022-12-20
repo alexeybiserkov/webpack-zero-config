@@ -1,0 +1,14 @@
+.site .flexi-comp-lw {
+    &-text {
+        a:not([class]) {
+            color: #1e63ff;
+            &:hover,
+            &:focus {
+                color: #1e63ff;
+            }
+            &:visited {
+                color: #1e63ff;
+            }
+        }
+    }
+}

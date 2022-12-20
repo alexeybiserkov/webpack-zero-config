@@ -1,0 +1,16 @@
+/**
+ * @deprecated Since release of rebrand theme
+ */
+
+.dropcap {
+    display: inline-block;
+    margin: 0 $spacer-md 0 0;
+    height: 4.37rem;
+    min-width: 4.37rem;
+    line-height: 1.28;
+    font-size: 160%;
+    text-align: center;
+    border: 2px solid ;
+    background: $purple;
+    color: $color-contrast;
+}

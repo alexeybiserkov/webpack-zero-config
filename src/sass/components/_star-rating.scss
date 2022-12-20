@@ -1,0 +1,40 @@
+.taco-star-rating {
+    color: $rating-color;
+
+    &.top-choice {
+        color: $top-choice-rating-color;
+    }
+}
+
+.taco-star-rating-fluid {
+    .stars-rating-wrapper {
+        --percent: calc(var(--rating) / 100 * 100%);
+        display: inline-block;
+
+        &:before {
+            content: '\2B50\2B50\2B50\2B50\2B50';
+            background: linear-gradient(90deg, $rating-color var(--percent), $rating-disabled-color var(--percent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 13px;
+            line-height: 1.7;
+            letter-spacing: normal;
+        }
+
+        /* Safari 10.1+ */
+        @media not all and (min-resolution:.001dpcm) {
+            @supports (-webkit-appearance:none) {
+                &:before {
+                    font-size: 12px;
+                    letter-spacing: 0.2px;
+                }
+            }
+        }
+    }
+
+    &.top-choice .stars-rating-wrapper:before {
+        background: linear-gradient(90deg, $top-choice-rating-color var(--percent), $rating-disabled-color var(--percent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

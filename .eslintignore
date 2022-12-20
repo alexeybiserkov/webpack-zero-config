@@ -1,6 +1,0 @@
-# Ignore minified files
-**/*.min.js
-
-# Ignore 3rd party files
-node_modules
-src/js/lib

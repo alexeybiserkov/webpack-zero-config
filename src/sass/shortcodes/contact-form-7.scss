@@ -1,0 +1,50 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../components/alerts';
+@import '../components/buttons';
+@import '../components/forms';
+
+.wpcf7-form {
+    p {
+        margin-top: $spacer-md;
+        @extend .form-group;
+    }
+
+    .wpcf7-form-control {
+        margin-top: $spacer-xs;
+        @extend .form-control;
+    }
+
+    .wpcf7-submit {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    .ajax-loader {
+        display: none;
+
+        &.is-active {
+            display: block;
+            margin: $spacer-xs 0;
+            height: 3rem;
+            background: url('../img/loading.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    .wpcf7-response-output {
+        margin: $spacer-md 0;
+        display: none;
+        @extend .alert;
+        @extend .alert-warning;
+
+        &.wpcf7-display-none {
+            display: none;
+        }
+
+        &.wpcf7-mail-sent-ok {
+            @extend .alert-success;
+        }
+    }
+}

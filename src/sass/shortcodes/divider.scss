@@ -1,0 +1,9 @@
+/**
+ * @deprecated Since release of rebrand theme
+ */
+
+@import '../abstracts/variables';
+
+.divider {
+    height: $spacer-md * 2;
+}

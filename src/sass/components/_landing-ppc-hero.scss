@@ -1,0 +1,159 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+@import '../abstracts/mixins';
+
+.hero-landing {
+    &-section {
+        background-color: $landing-ppc-color;
+        margin-bottom: $spacer-md;
+
+        @include media-breakpoint-up(xl) {
+            background-color: $background-body;
+        }
+
+        @include media-breakpoint-down(xl) {
+            position: relative;
+        }
+    }
+
+    &-row {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            align-items: end;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding-left: $spacer-md * 1.5;
+            padding-right: $spacer-md * 1.5;
+        }
+    }
+
+    &-wrapper {
+        width: 100%;
+        background-color: $landing-ppc-color;
+        padding-top: $spacer-xs;
+
+        @include media-breakpoint-up(md) {
+            padding-top: $spacer-sm;
+        }
+
+        @include media-breakpoint-up(xl) {
+            position: relative;
+        }
+    }
+
+    &-content {
+        @include media-breakpoint-up(md) {
+            flex: 3;
+            padding-right: $spacer-md * 2;
+        }
+    }
+
+    &-title {
+        font-size: $landing-hero-title-size;
+        margin-top: $spacer-xs;
+        margin-bottom: $spacer-sm;
+    }
+
+    &-subtitle {
+        font-size: $landing-base-size;
+        line-height: 1.5;
+        padding-bottom: 2rem;
+    }
+
+    &-figure,
+    &-animation {
+        display: flex;
+        justify-content: center;
+        flex: 2;
+        width: 100%;
+        height: 100%;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    &-figure {
+        align-items: flex-end;
+        padding-bottom: 36px;
+    }
+
+    &-animation {
+        padding-bottom: 52px;
+        align-items: center;
+
+        img {
+            max-width: 250px;
+        }
+    }
+
+    &-link {
+        background-color: $advertising-block-bg;
+        padding: $spacer-xs $spacer-md;
+        text-align: right;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            padding-left: $spacer-md * 1.5;
+            padding-right: $spacer-md * 1.5;
+        }
+
+        a {
+            display: block;
+            color: $black;
+            font-size: $font-size-small;
+            cursor: pointer;
+            transition: .3s ease;
+
+            @include media-breakpoint-up(md) {
+                margin-right: $spacer-sm;
+            }
+
+            &:hover {
+                color: $black;
+                opacity: .8;
+            }
+        }
+    }
+
+    &-info {
+        padding-bottom: $spacer-lg;
+        font-size: $font-size-small;
+
+        .expert-tip-holder {
+            @include media-breakpoint-up(md) {
+                margin-right: 15px;
+            }
+        }
+
+        .updated-at {
+            float: right;
+            line-height: $line-height-base;
+
+            @include media-breakpoint-up(md) {
+                float: none;
+            }
+
+            time {
+                @media only screen and (max-width: 320px) {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .icon-calendar {
+            display: inline-block;
+            margin-right: 5px;
+            width: 13px;
+            height: 13px;
+            background: url('../img/calendar-day.svg') center no-repeat;
+            background-size: contain;
+        }
+    }
+}

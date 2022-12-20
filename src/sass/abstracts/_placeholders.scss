@@ -1,0 +1,13 @@
+/*
+ * Responsive images
+ */
+
+%responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+%responsive-image-full-width {
+    @extend %responsive-image;
+    width: 100%;
+}

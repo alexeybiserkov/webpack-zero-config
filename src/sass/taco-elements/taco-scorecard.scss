@@ -1,0 +1,402 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.taco-scorecard {
+    border: $scorecard-border;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: $padding-component-inner;
+    padding-right: $padding-component-inner;
+    font-size: $font-size-small;
+    line-height: 1.6;
+
+    ul {
+        list-style-type: none;
+        padding-inline-start: 0;
+        margin-top: 0;
+    }
+
+    .visible-xs {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+
+    .visible-md {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    .badge {
+        border-bottom: $scorecard-border;
+        color: $scorecard-secondary-color;
+        padding-top: $padding-component-inner;
+        padding-bottom: $padding-component-inner;
+
+        .badge-content {
+            display: flex;
+            align-items: center;
+            font-size: $font-size-small;
+            font-weight: $font-weight-bold;
+            letter-spacing: 0.2px;
+        }
+
+        .badge-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: $scorecard-border;
+        padding-top: $padding-component-inner;
+        padding-bottom: $padding-component-inner;
+
+        .heading {
+            &-title {
+                font-size: $font-size-base;
+                line-height: 1.4;
+                margin-top: 0;
+                margin-bottom: 8px;
+            }
+
+            &-subtitle {
+                margin-top: 0;
+                margin-bottom: 0;
+                color: #757575;
+                font-weight: $font-weight-semi-bold;
+            }
+        }
+
+        .rating {
+            position: relative;
+        }
+
+        .taco-radial-rating {
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+            }
+
+            .score-area {
+                width: 52px;
+                height: 52px;
+            }
+
+            .border-circ {
+                border-width: 4px;
+            }
+
+            .center-circ * {
+                font-size: $font-size-base;
+            }
+        }
+
+        .rating-text {
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                position: relative;
+                bottom: 20px;
+                margin-right: 8px;
+                text-transform: uppercase;
+                font-weight: $font-weight-bold;
+                color: $scorecard-secondary-color;
+            }
+        }
+    }
+
+    &-description {
+        border-bottom: $scorecard-border;
+        padding-top: $padding-component-inner;
+
+        .list-description {
+            margin-bottom: $spacer-md;
+
+            li {
+                margin-top: 0;
+                margin-bottom: 2px;
+                padding-left: 24px;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    width: 16px;
+                    height: 16px;
+                    background-image: url('../img/bullet-check.svg');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            .icon {
+                display: inline-block;
+                margin-right: 6px;
+                font-size: 16px;
+                color: $scorecard-secondary-color;
+            }
+        }
+
+        .pricing {
+            margin-bottom: $spacer-md;
+            padding-left: 24px;
+            position: relative;
+
+            img {
+                display: inline-block;
+                position: absolute;
+                top: 4px;
+                left: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .show-more {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 22px;
+            font-size: 12px;
+            line-height: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: $scorecard-btn-color;
+            border: 0;
+            background-color: transparent;
+            box-shadow: none;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+            .icon {
+                position: absolute;
+                top: 2px;
+                left: 0;
+            }
+
+            .icon-less {
+                display: none;
+            }
+        }
+    }
+
+    &-expandable-content {
+        height: 0;
+        overflow: hidden;
+        transition: .3s;
+        margin: 0 (-$padding-component-inner);
+        padding: 0 $padding-component-inner;
+        background-color: #f7f7f7;
+
+        .list-heading {
+            margin-top: 0;
+            font-size: $font-size-small;
+            text-transform: uppercase;
+            font-weight: $font-weight-semi-bold;
+        }
+
+        .list-features li {
+            position: relative;
+            padding-left: 24px;
+
+            img {
+                display: inline-block;
+                position: absolute;
+                top: 7px;
+                left: 0;
+            }
+        }
+
+        .read-more {
+            display: inline-block;
+            color: $scorecard-btn-color;
+        }
+    }
+
+    .expandable-content {
+        .taco-scorecard-description {
+            border-bottom: 0;
+        }
+
+        .taco-scorecard-expandable-content {
+            height: auto;
+            padding: $padding-component-inner;
+        }
+
+        .show-more .icon-more {
+            display: none;
+        }
+
+        .show-more .icon-less {
+            display: block;
+        }
+    }
+
+    &-footer {
+        padding-top: $padding-component-inner;
+        padding-bottom: $padding-component-inner;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .logo-block {
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+            }
+
+            a {
+                display: block;
+            }
+
+            img {
+                display: block;
+            }
+        }
+
+        .cta-link-block {
+            position: relative;
+
+            .btn-cta {
+                min-width: 160px;
+            }
+        }
+
+        .tooltip-message {
+            padding: 14px 10px;
+            text-align: center;
+            width: 190px;
+            min-height: 50px;
+            background-color: #fff;
+            border: $scorecard-border;
+            border-radius: 4px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: .2s;
+            line-height: 1.2;
+            position: absolute;
+            z-index: 2;
+            top: 100%;
+            right: -16px;
+            margin-top: 24px;
+
+            @include media-breakpoint-up(md) {
+                top: -16px;
+                transform: translateY(-100%);
+                margin-top: 0;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                right: 50%;
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                border-top: $scorecard-border;
+                border-left: $scorecard-border;
+                box-shadow: -4px -2px 8px rgba(0,0,0,.1);
+                transform: rotate(45deg) translateX(-50%);
+
+                @include media-breakpoint-up(md) {
+                    top: unset;
+                    bottom: -10px;
+                    border-top: 0;
+                    border-left: 0;
+                    border-right: $scorecard-border;
+                    border-bottom: $scorecard-border;
+                    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        .close-tooltip-btn {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: $scorecard-border;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 3;
+            top: -10px;
+            right: -10px;
+            background: #fff url('../img/close-icon.svg') center 5px no-repeat;
+            background-size: 8px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    &.editors-choice {
+        border-color: $scorecard-top-color;
+
+        .badge,
+        .taco-scorecard-header .rating-text {
+            color: $scorecard-top-color;
+        }
+
+        .taco-radial-rating .semi-circ {
+            background-color: $scorecard-top-color;
+        }
+
+        .taco-scorecard-description .list-description li:before {
+            background-image: url('../img/bullet-check-top.svg');
+        }
+
+        .taco-scorecard-expandable-content {
+            background-color: rgba($scorecard-top-color, 0.1);
+        }
+
+        .badge-icon {
+            background: url('../img/trophy.svg') center no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.peoples-choice .badge-icon {
+        background: url('../img/people.svg') center no-repeat;
+    }
+
+    &.best-value .badge-icon {
+        background: url('../img/dollar-note.svg') center no-repeat;
+        background-size: contain;
+    }
+
+    &.scorecard-has-tooltip {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 4rem;
+        }
+    }
+}

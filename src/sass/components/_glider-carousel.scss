@@ -1,0 +1,185 @@
+// Glider-slider main styles
+
+.glider {
+    margin: 0 auto;
+    position: relative;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    transform: translateZ(0);
+
+    &-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &-track {
+        transform: translateZ(0);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        z-index: 1;
+
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 10px;
+        }
+    }
+
+    &-slide {
+        user-select: none;
+        justify-content: center;
+        align-content: center;
+        min-width: 150px;
+        width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &.draggable {
+        user-select: none;
+        cursor: -webkit-grab;
+        cursor: grab;
+
+        .glider-slide img {
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    &.drag {
+        cursor: -webkit-grabbing;
+        cursor: grabbing;
+    }
+
+    &-prev {
+        right: auto;
+        left: -1.5rem;
+    }
+
+    &-next {
+        left: auto;
+        right: -1.5rem;
+    }
+
+    &-prev,
+    &-next {
+        user-select: none;
+        position: absolute;
+        outline: none;
+        background: none;
+        padding: 0;
+        z-index: 2;
+        font-size: 1.5rem;
+        text-decoration: none;
+        border: 0;
+        top: 30%;
+        cursor: pointer;
+        color: $navigation-slider-color;
+        opacity: 1;
+        line-height: 1;
+        transition: opacity .5s cubic-bezier(.17,.67,.83,.67), color .5s cubic-bezier(.17,.67,.83,.67);
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+
+        img {
+            filter: brightness(0.1);
+        }
+
+        &:hover,
+        &:focus {
+            color: $primary;
+
+            img {
+                filter: brightness(1);
+            }
+        }
+
+        &.disabled {
+            opacity: .5;
+            cursor: inherit;
+            pointer-events: none;
+
+            img {
+                filter: grayscale(1);
+            }
+        }
+
+        &.disabled[hidden] {
+            display: none;
+        }
+    }
+
+    &-hide {
+        opacity: 0;
+    }
+
+    &-dots {
+        user-select: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px auto 0;
+        padding: 0;
+    }
+
+    &-dot {
+        background: none;
+        display: block;
+        border: solid 1px $navigation-slider-color;
+        border-radius: 100%;
+        color: #ccc;
+        width: 12px;
+        height: 12px;
+        margin: 7px;
+        padding: 0;
+        user-select: none;
+        outline: none;
+        cursor: pointer;
+
+        &.active {
+            background: $navigation-slider-color;
+        }
+
+        &:focus,
+        &:hover,
+        &.active {
+            box-shadow: none;
+        }
+
+        &:only-of-type {
+            display: none;
+        }
+    }
+}
+
+.glider::-webkit-scrollbar {
+    opacity: 0;
+    height: 0;
+    width: 0 !important;
+
+    @include media-breakpoint-down(md) {
+        opacity: 1;
+        -webkit-appearance: none;
+        width: 0 !important;
+        height: 0;
+    }
+
+    &-thumb {
+        height: 0;
+        width: 0 !important;
+
+        @include media-breakpoint-down(md) {
+            opacity: 1;
+            border-radius: 99px;
+            background-color: transparent;
+            box-shadow: 0 0 1px rgba(255,255,255, .8);
+        }
+    }
+}

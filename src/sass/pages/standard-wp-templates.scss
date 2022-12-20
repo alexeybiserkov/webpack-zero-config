@@ -1,0 +1,15 @@
+/*
+Created to support:
+    - index.php - now used for 404 pages
+    - search.php
+    - archive.php - 'uncategorized' is displayed here
+*/
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/placeholders';
+
+@import '../components/sidebar';
+
+/* for archive, index, search only */
+@import '../components/pagination';

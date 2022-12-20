@@ -1,0 +1,22 @@
+@import '../../../node_modules/rfs/scss';
+@import '../abstracts/variables';
+
+// Expert Quotation Block, Brand specific styles
+.flexi-comp-expert-quotation-wrapper {
+    border-color: $flexi-quotation-block-color;
+    font-family: $font-family-base;
+    color: $color-base;
+
+    .title-icon svg path {
+        fill: $flexi-quotation-block-color;
+    }
+
+    .expert-quotation-title,
+    .expert-name {
+        color: $headings-color;
+    }
+
+    .expert-quotation-info {
+        background-color: $flexi-quotation-block-bg;
+    }
+}

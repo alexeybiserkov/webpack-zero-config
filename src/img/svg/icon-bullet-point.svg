@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M7.5,11.0673049 C5.514975,11.0673049 3.9,9.45708678 3.9,7.47790869 C3.9,5.4987306 5.514975,3.88851252 7.5,3.88851252 C9.485025,3.88851252 11.1,5.4987306 11.1,7.47790869 C11.1,9.45708678 9.485025,11.0673049 7.5,11.0673049 M7.5,1.49558174 C4.186275,1.49558174 1.5,4.17394429 1.5,7.47790869 C1.5,10.7818731 4.186275,13.4602356 7.5,13.4602356 C10.813725,13.4602356 13.5,10.7818731 13.5,7.47790869 C13.5,4.17394429 10.813725,1.49558174 7.5,1.49558174" id="path-icon-bullet"></path>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="'Toolkit'-Box" transform="translate(-67.000000, -179.000000)">
+            <g id="Group-4-Copy-13" transform="translate(55.000000, 79.009212)">
+                <g id="Group-27" transform="translate(0.000000, 84.652154)">
+                    <g id="atom/icon/bullet-point-copy-5" transform="translate(12.536928, 16.022091)">
+                        <mask id="mask-icon-bullet" fill="white">
+                            <use xlink:href="#path-icon-bullet"></use>
+                        </mask>
+                        <use fill="#1e23ff" xlink:href="#path-icon-bullet"></use>
+                        <g id="Group" mask="url(#mask-icon-bullet)" fill="#1e23ff">
+                            <g id="atom/color/lightblue">
+                                <rect id="Rectangle-Copy-4" x="0" y="0" width="15" height="14.9558174"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

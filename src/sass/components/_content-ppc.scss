@@ -1,0 +1,96 @@
+/**
+ * Custom styles for content - PPC Landing page
+ */
+
+.landing-ppc-wrapper {
+    background-color: $landing-ppc-content-bg;
+    .container-ppc {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-direction: row;
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .landing-ppc-content {
+        @include media-breakpoint-up(md) {
+            flex: 2;
+            order: 1;
+        }
+
+        /* stylelint-disable */
+        .wpb_wrapper {
+            & > h2,
+            & > h3,
+            & > h4 {
+                font-size: $font-size-base;
+                line-height: $line-height-base;
+                margin-bottom: $spacer-md;
+            }
+        }
+    }
+
+    .sidebar {
+        display: block;
+        margin-top: $spacer-md;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            flex: 1;
+            order: 2;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+
+    .taco-element-container {
+        margin: 0 15px;
+        max-width: 100%;
+        width: auto;
+        @include media-breakpoint-up(sm) {
+            margin: 0 auto;
+            max-width: 540px;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            max-width: 1140px;
+        }
+
+        .sliders {
+            margin: $spacer-md 0;
+
+            h2:after {
+                display: none;
+            }
+        }
+
+        .glider-prev {
+            left: -10px;
+        }
+
+        .glider-next {
+            right: -10px;
+        }
+
+        .glider-dots {
+            margin-top: 25px;
+        }
+    }
+}
+
+.ppc-star-rating {
+    .taco-star-rating {
+        color: $ppc-star-rating !important;
+    }
+}

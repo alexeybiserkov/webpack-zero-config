@@ -1,0 +1,21 @@
+.taco-responsive-banner {
+    box-shadow: 0 4px 13px rgba(0,0,0,0.19);
+    border: 1px solid #c6cbd4;
+    color: #0f1e26;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    .banner-title {
+        background: #fbfbfc;
+        border-bottom: 1px solid #c6cbd4;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 8px 15px;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+}

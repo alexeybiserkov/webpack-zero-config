@@ -1,0 +1,34 @@
+/*
+ * Base styles
+ */
+.alert {
+    position: relative;
+    display: flex;
+    padding: $alert-padding-y $alert-padding-x;
+    margin-bottom: $alert-margin-bottom;
+    font-family: $alert-font-family;
+    @include font-size( $alert-font-size );
+    line-height: $alert-line-height;
+    border: $alert-border-width solid transparent;
+}
+
+.alert-title {
+    content: '';
+    display: block;
+    flex-grow: 0;
+    min-width: $alert-font-size * $alert-line-height + $alert-padding-y * 2;
+    margin-top: -$alert-padding-y;
+    margin-right: $alert-padding-x;
+    margin-bottom: -$alert-padding-y;
+    margin-left: -$alert-padding-x;
+    padding: $alert-padding-y;
+    color: $color-contrast;
+    font-weight: $font-weight-bold;
+    text-align: center;
+}
+
+@each $color, $value in $theme-status-colors {
+    .alert-#{$color} {
+        @include alert-variant( $value );
+    }
+}

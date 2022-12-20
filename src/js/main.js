@@ -1,3 +1,7 @@
-const part = require('./inc/part');
+import Test from './component/module';
 
-document.write(part.test);
+document.addEventListener('DOMContentLoaded', () => {
+  const test = new Test();
+  const state = test.initDocument();
+  document.write(state.toString());
+});
