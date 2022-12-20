@@ -2,8 +2,13 @@
   "name": "webpack-zero-config",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode=production",
-    "dev": "webpack --config webpack.config.js --mode=development --stats-error-details"
+    "build": "npm run js  && npm run style && npm run media",
+    "media": "webpack --config media.webpack.config.js --mode=production",
+    "style": "webpack --config style.webpack.config.js --mode=production",
+    "js": "webpack --config js.webpack.config.js --mode=production",
+    "dev": "npm run js:dev && npm run style:dev",
+    "style:dev": "webpack --config style.webpack.config.js --mode=development --watch",
+    "js:dev": "webpack --config js.webpack.config.js --mode=development --watch"
   },
   "browser": {
     "module-a": false
