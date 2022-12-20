@@ -1,8 +1,6 @@
 {
-  "name": "gulp-zero-config",
+  "name": "webpack-zero-config",
   "version": "1.0.0",
-  "description": "```sh npm install ``` make sure you have installed gulp global ```sh npm install -g gulp ``` and run build command ```sh  gulp build ```",
-  "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js --mode=production",
     "dev": "webpack --config webpack.config.js --mode=development --stats-error-details"
@@ -12,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexeybiserkov/gulp-zero-config.git"
+    "url": "git+https://github.com/alexeybiserkov/webpack-zero-config.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alexeybiserkov/gulp-zero-config/issues"
+    "url": "https://github.com/alexeybiserkov/webpack-zero-config/issues"
   },
-  "homepage": "https://github.com/alexeybiserkov/gulp-zero-config#readme",
+  "homepage": "https://github.com/alexeybiserkov/webpack-zero-config#readme",
   "dependencies": {
     "glider-js": "^1.7.7",
     "normalize.css": "^8.0.1",
