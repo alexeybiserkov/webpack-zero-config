@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const { WebpackSweetEntry } = require('@sect/webpack-sweet-entry'); // Generate multy path for entry
 const FileManagerPlugin = require('filemanager-webpack-plugin'); // remove, move, copy, delete, archive files
-var SvgChunkWebpackPlugin = require('svg-chunk-webpack-plugin');
 
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'dist');
@@ -16,19 +15,62 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.svg$/,
+        test: /\.(svg)$/i,
         use: [
           {
-            loader: SvgChunkWebpackPlugin.loader
+            loader: 'file-loader',
+            options: {
+              name: (srcPath) => {
+                const param = srcPath.split('/').reverse();
+                const dPath = param.slice(1, ( param.indexOf('img') -1) ).reverse().join('/')
+                return dPath + '/[name].[ext]';
+              }
+            },
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              multipass: true,
+              js2svg: {
+                indent: 2,
+                pretty: false,
+              },
+              plugins: [
+                // set of built-in plugins enabled by default
+                {
+                  name: 'preset-default',
+                  params: {
+                    overrides: {
+                      // customize default plugin options
+                      inlineStyles: {
+                        onlyMatchedOnce: false,
+                      },
+            
+                      // or disable plugins
+                      removeDoctype: false,
+                      removeViewBox: false,
+                    },
+                  },
+                },
+            
+                // enable built-in plugins by name
+                'prefixIds',
+            
+                // or by expanded notation which allows to configure plugin
+                {
+                  name: 'sortAttrs',
+                  params: {
+                    xmlnsOrder: 'alphabetical',
+                  },
+                },
+              ],
+            }
           }
-        ]
+        ],
       }
     ]
   },
   plugins: [
-    new SvgChunkWebpackPlugin({
-      filename: '[name].svg'
-    }),
     new FileManagerPlugin({
       events: {
         onEnd: {
@@ -38,7 +80,7 @@ module.exports = {
             // Copy Fonts to dist folder
             { source: path.resolve(sourcePath, 'fonts'), destination: path.resolve(buildPath, 'fonts') },
             // Copy Images to dist folder
-            { source: path.resolve(sourcePath, 'img/**/*.png'), destination: path.resolve(buildPath, 'img') },
+            { source: path.resolve(sourcePath, 'img/**/*.{png,jpg,jpeg,webp}'), destination: path.resolve(buildPath, 'img') },
           ],
         },
       },

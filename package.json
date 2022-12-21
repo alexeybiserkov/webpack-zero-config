@@ -2,7 +2,7 @@
   "name": "webpack-zero-config",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run js  && npm run style && npm run media",
+    "build": "npm run js && npm run style && npm run media",
     "media": "webpack --config media.webpack.config.js --mode=production",
     "style": "webpack --config style.webpack.config.js --mode=production",
     "js": "webpack --config js.webpack.config.js --mode=production",
@@ -26,6 +26,8 @@
   "homepage": "https://github.com/alexeybiserkov/webpack-zero-config#readme",
   "dependencies": {
     "glider-js": "^1.7.7",
+    "intersection-observer": "^0.5.1",
+    "lozad": "^1.14.0",
     "normalize.css": "^8.0.1",
     "rfs": "^9.0.3"
   },
@@ -45,6 +47,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",
+    "file-loader": "^6.2.0",
     "filemanager-webpack-plugin": "^8.0.0",
     "glob": "^8.0.3",
     "mini-css-extract-plugin": "^2.7.2",
@@ -57,7 +60,8 @@
     "stylelint-config-recommended-scss": "^8.0.0",
     "stylelint-scss": "^4.3.0",
     "stylelint-webpack-plugin": "^3.3.0",
-    "svg-chunk-webpack-plugin": "^3.0.0",
+    "svgo": "^3.0.2",
+    "svgo-loader": "^3.0.3",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   }
